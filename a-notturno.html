@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grosso · Proposta A · Notturno</title>
+<meta name="robots" content="noindex">
+<!-- Mockup indicativo. Immagini generate con Higgsfield (GPT Image 2.6) solo per l'atmosfera: nel sito vero foto reali. Prezzi e tempi di esempio. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/n-hero-lago-notte-1600.webp" imagesrcset="img/n-hero-lago-notte-800.webp 800w, img/n-hero-lago-notte-1600.webp 1600w, img/n-hero-lago-notte-2400.webp 2400w" imagesizes="100vw">
+<link rel="stylesheet" href="assets/chip.css?v=3">
+<style>
+:root {
+  --ink: #0a0a0b; --night: #101113; --graphite: #18191c; --raise: #1f2024;
+  --text: #ede8df; --muted: rgba(237, 232, 223, .64); --faint: rgba(237, 232, 223, .38);
+  --line: rgba(237, 232, 223, .12); --line-2: rgba(237, 232, 223, .22);
+  --gold: #cbb68c; --gold-2: #e4d4ae; --gold-dim: rgba(203, 182, 140, .18);
+  --serif: 'Bodoni Moda', 'Didot', Georgia, serif; --sans: 'Manrope', system-ui, sans-serif;
+  --pad: clamp(16px, 4vw, 56px); --max: 1360px;
+  --ease: cubic-bezier(.2, .7, .1, 1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; }
+body { margin: 0; background: var(--ink); color: var(--text); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+button, input, select { font: inherit; color: inherit; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+:focus-visible { outline: 1px solid var(--gold-2); outline-offset: 3px; }
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .08em; margin-bottom: -.08em; }
+.w > span { display: inline-block; }
+
+/* Tipografia */
+.display { font-family: var(--serif); font-weight: 400; font-optical-sizing: auto; letter-spacing: -.01em; line-height: 1.02; margin: 0; }
+.display em { font-style: italic; color: var(--gold-2); }
+.kicker { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin: 0 0 18px; }
+.lead { font-size: clamp(16px, 1.3vw, 18px); color: var(--muted); max-width: 46ch; margin: 0; }
+
+/* Bottoni */
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 2px; border: 1px solid var(--gold); background: var(--gold); color: #17140e; font-weight: 600; font-size: 14px; letter-spacing: .02em; text-decoration: none; cursor: pointer; transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease); }
+.btn:hover { background: var(--gold-2); border-color: var(--gold-2); }
+.btn.ghost { background: transparent; color: var(--text); border-color: var(--line-2); }
+.btn.ghost:hover { border-color: var(--gold); color: var(--gold-2); }
+.btn svg { width: 18px; height: 18px; }
+
+/* Navigazione */
+.nav { position: fixed; inset: 0 0 auto; z-index: 50; transition: background .3s var(--ease), border-color .3s; border-bottom: 1px solid transparent; }
+.nav.solid { background: rgba(10, 10, 11, .9); border-color: var(--line); backdrop-filter: blur(10px); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 24px; }
+.brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1; }
+.brand b { font-family: var(--serif); font-weight: 500; font-size: 28px; letter-spacing: .04em; }
+.brand small { font-size: 10px; letter-spacing: .26em; text-transform: uppercase; color: var(--gold); margin-top: 6px; }
+.nav ul { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.nav ul a { text-decoration: none; color: var(--muted); transition: color .2s; }
+.nav ul a:hover { color: var(--text); }
+.nav-right { display: flex; align-items: center; gap: 18px; font-size: 13px; }
+.lang { color: var(--muted); letter-spacing: .08em; }
+.lang b { color: var(--text); font-weight: 600; }
+.nav .btn { min-height: 42px; padding: 0 18px; }
+@media (max-width: 900px) { .nav ul, .lang { display: none; } }
+
+/* Hero */
+.hero { position: relative; min-height: 100svh; display: grid; align-items: end; overflow: hidden; isolation: isolate; }
+.hero-media { position: absolute; inset: 0; z-index: -2; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 60%; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
+  linear-gradient(90deg, rgba(10,10,11,0) 18%, rgba(10,10,11,.55) 52%, rgba(10,10,11,.86) 100%),
+  linear-gradient(180deg, rgba(10,10,11,.55) 0%, rgba(10,10,11,0) 24%, rgba(10,10,11,0) 52%, rgba(10,10,11,.96) 100%); }
+.hero-inner { display: grid; grid-template-columns: 1fr minmax(0, 600px); gap: 40px; padding-top: 140px; padding-bottom: 28px; }
+.hero-copy { grid-column: 2; padding-bottom: clamp(24px, 6vh, 72px); }
+.hero h1 { font-size: clamp(46px, 5.6vw, 84px); }
+.hero .lead { margin-top: 24px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 28px; font-size: 13px; color: var(--muted); }
+.hero-meta span::before { content: ""; display: inline-block; width: 5px; height: 5px; margin-right: 9px; border-radius: 50%; background: var(--gold); vertical-align: middle; }
+@media (max-width: 900px) {
+  .hero { align-items: end; }
+  .hero::before { background: linear-gradient(180deg, rgba(10,10,11,.5) 0%, rgba(10,10,11,0) 22%, rgba(10,10,11,.2) 40%, rgba(10,10,11,.92) 66%, var(--ink) 100%); }
+  .hero-media img { object-position: 24% 50%; }
+  .hero-inner { grid-template-columns: 1fr; padding-top: 42svh; }
+  .hero-copy { grid-column: 1; padding-bottom: 8px; }
+}
+
+/* Modulo di prenotazione */
+.book { position: relative; z-index: 2; margin-top: 0; }
+.book-panel { background: rgba(16, 17, 19, .94); border: 1px solid var(--line-2); border-radius: 2px; }
+.book form { display: grid; grid-template-columns: 1.25fr 1.25fr .9fr .8fr auto; }
+.field { position: relative; padding: 16px 20px 14px; border-right: 1px solid var(--line); }
+.field label { display: block; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); margin-bottom: 4px; }
+.field select, .field input { width: 100%; background: none; border: 0; padding: 2px 0; font-size: 16px; font-weight: 500; appearance: none; -webkit-appearance: none; cursor: pointer; color-scheme: dark; }
+.field select:focus, .field input:focus { outline: none; }
+.field:focus-within { background: var(--raise); }
+.field:focus-within label { color: var(--gold); }
+.field option { background: var(--night); }
+.book .submit { display: flex; align-items: stretch; padding: 10px; }
+.book .submit .btn { width: 100%; justify-content: center; min-height: 100%; }
+.book-note { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 12px 2px 0; font-size: 13px; color: var(--muted); }
+.book-note a { color: var(--gold-2); text-decoration: none; border-bottom: 1px solid var(--gold-dim); }
+@media (max-width: 900px) {
+  .book form { grid-template-columns: 1fr 1fr; }
+  .field { border-bottom: 1px solid var(--line); }
+  .field:nth-child(2n) { border-right: 0; }
+  .book .submit { grid-column: 1 / -1; padding: 12px; }
+  .book .submit .btn { min-height: 52px; }
+}
+.results { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s var(--ease); }
+.results.open { grid-template-rows: 1fr; }
+.results > div { overflow: hidden; }
+.results-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; padding: 22px 20px 6px; border-top: 1px solid var(--line); }
+.results-head h2 { font-family: var(--serif); font-weight: 400; font-size: 26px; margin: 0; }
+.results-head p { margin: 0; font-size: 13px; color: var(--muted); }
+.tag { display: inline-block; padding: 3px 8px; border: 1px solid var(--gold-dim); color: var(--gold); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.options { list-style: none; margin: 0; padding: 6px 20px 20px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; }
+.opt { display: flex; flex-direction: column; gap: 6px; padding: 18px 16px; background: var(--graphite); border: 1px solid transparent; transition: border-color .2s; }
+.opt:hover { border-color: var(--line-2); }
+.opt h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.opt .k { font-size: 12px; color: var(--faint); }
+.opt .price { font-family: var(--serif); font-size: 34px; line-height: 1; margin: 10px 0 4px; }
+.opt .cap { font-size: 12px; color: var(--muted); display: flex; gap: 14px; }
+.opt button { margin-top: 12px; min-height: 42px; border: 1px solid var(--line-2); background: none; cursor: pointer; font-size: 13px; font-weight: 600; letter-spacing: .02em; transition: border-color .2s, background .2s, color .2s; }
+.opt button:hover { border-color: var(--gold); color: var(--gold-2); }
+.opt[aria-disabled="true"] { opacity: .45; }
+.opt[aria-disabled="true"] button { cursor: not-allowed; }
+.opt.sent button { background: var(--gold); border-color: var(--gold); color: #17140e; }
+@media (max-width: 900px) { .options { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .options { grid-template-columns: 1fr; } .opt { flex-direction: row; flex-wrap: wrap; align-items: baseline; } .opt .price { margin: 0 0 0 auto; font-size: 28px; } .opt button { width: 100%; } }
+
+/* Sezioni */
+section { position: relative; }
+.sec { padding: clamp(88px, 12vw, 168px) 0; }
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: end; margin-bottom: clamp(40px, 6vw, 72px); }
+.sec-head h2 { font-size: clamp(38px, 4.6vw, 68px); }
+@media (max-width: 800px) { .sec-head { grid-template-columns: 1fr; gap: 20px; } }
+
+/* Orologio 24/7 */
+.clock { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--night); }
+.clock .wrap { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.time { font-family: var(--serif); font-size: clamp(88px, 15vw, 220px); line-height: .9; letter-spacing: -.03em; font-variant-numeric: lining-nums tabular-nums; margin: 0; }
+.time .colon { color: var(--gold); animation: blink 2s steps(1) infinite; }
+@keyframes blink { 50% { opacity: .25; } }
+.time-cap { display: flex; gap: 12px; align-items: center; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 18px; }
+.time-cap i { width: 8px; height: 8px; border-radius: 50%; background: #7fc49a; box-shadow: 0 0 0 4px rgba(127, 196, 154, .15); }
+.clock h2 { font-size: clamp(32px, 3.4vw, 48px); margin-bottom: 22px; }
+.incl { list-style: none; margin: 32px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.incl li { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.incl li span:last-child { color: var(--muted); text-align: right; }
+@media (max-width: 860px) { .clock .wrap { grid-template-columns: 1fr; } }
+
+/* Tratta disegnata */
+.route { height: 260vh; }
+.route-stick { position: sticky; top: 0; height: 100svh; display: flex; align-items: center; overflow: hidden; }
+.route-stick .wrap { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 48px; align-items: center; }
+.route h2 { font-size: clamp(40px, 5vw, 76px); }
+.route-nums { display: flex; gap: 40px; margin: 36px 0 28px; }
+.route-nums div { border-top: 1px solid var(--line-2); padding-top: 12px; min-width: 120px; }
+.route-nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(44px, 4.6vw, 64px); line-height: 1; font-variant-numeric: tabular-nums; }
+.route-nums small { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); }
+.route svg { width: 100%; height: auto; max-height: 78svh; overflow: visible; }
+.route .road-bg { fill: none; stroke: var(--line); stroke-width: 1.5; }
+.route .road { fill: none; stroke: url(#beam); stroke-width: 2.5; stroke-linecap: round; }
+.route .lake path { fill: none; stroke: rgba(203, 182, 140, .09); stroke-width: 22; stroke-linecap: round; }
+.route .lake text { fill: var(--faint); font: italic 400 17px var(--serif); }
+.route .stop circle { fill: var(--ink); stroke: var(--gold); stroke-width: 1.5; }
+.route .stop.end circle { fill: var(--gold); }
+.route .stop text { fill: var(--muted); font: 500 13px var(--sans); letter-spacing: .04em; }
+.route .stop text.big { fill: var(--text); font: 400 22px var(--serif); }
+.route .car { fill: var(--gold-2); filter: drop-shadow(0 0 10px rgba(228, 212, 174, .9)); }
+@media (max-width: 860px) {
+  .route { height: auto; }
+  .route-stick { position: relative; height: auto; padding: 96px 0; }
+  .route-stick .wrap { grid-template-columns: 1fr; }
+  .route svg { max-height: 60svh; }
+}
+
+/* Tratte più richieste */
+.rides .grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.ride-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.ride { border-bottom: 1px solid var(--line); }
+.ride a { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 24px; align-items: baseline; padding: 24px 4px; text-decoration: none; transition: padding .3s var(--ease), background .3s; }
+.ride .name { font-family: var(--serif); font-size: clamp(24px, 2.6vw, 36px); line-height: 1.1; }
+.ride .name small { font-family: var(--sans); font-size: 13px; color: var(--faint); margin-left: 6px; }
+.ride .dur { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ride .from { font-size: 14px; color: var(--muted); min-width: 92px; text-align: right; }
+.ride .from b { color: var(--text); font-weight: 600; font-size: 17px; }
+.ride a:hover, .ride a:focus-visible, .ride.on a { padding-left: 16px; background: linear-gradient(90deg, var(--gold-dim), transparent 70%); outline: none; }
+.ride a:hover .name, .ride.on .name { color: var(--gold-2); }
+.ride-stage { position: sticky; top: 110px; aspect-ratio: 4 / 5; overflow: hidden; background: var(--graphite); }
+.ride-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.06); transition: opacity .6s var(--ease), transform 1.2s var(--ease); }
+.ride-stage img.on { opacity: 1; transform: none; }
+.ride-stage figcaption { position: absolute; left: 16px; bottom: 14px; font-size: 12px; color: var(--muted); letter-spacing: .06em; }
+.rides-foot { margin-top: 28px; font-size: 13px; color: var(--faint); }
+@media (max-width: 860px) { .rides .grid { grid-template-columns: 1fr; } .ride-stage { display: none; } .ride a { grid-template-columns: 1fr auto; } .ride .dur { grid-column: 1; grid-row: 2; } .ride .from { grid-row: 1 / 3; grid-column: 2; align-self: center; } }
+
+/* Rituale d'arrivo */
+.ritual { background: var(--night); border-top: 1px solid var(--line); }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
+.step .frame { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--graphite); margin-bottom: 22px; }
+.step .frame img { width: 100%; height: 100%; object-fit: cover; }
+.step .n { font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 20px; }
+.step h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 2.4vw, 34px); line-height: 1.1; margin: 6px 0 10px; }
+.step p { margin: 0; color: var(--muted); font-size: 15px; max-width: 38ch; }
+.flight { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; padding: 28px; background:
+  radial-gradient(120% 80% at 80% 110%, rgba(203,182,140,.16), transparent 60%), var(--graphite); }
+.flight .row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--line); padding-bottom: 12px; font-size: 13px; color: var(--muted); }
+.flight .row b { font-family: var(--serif); font-weight: 400; font-size: 34px; color: var(--text); }
+.flight .status { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gold-2); }
+.flight .status i { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 7px rgba(203, 182, 140, 0); } 0% { box-shadow: 0 0 0 0 rgba(203, 182, 140, .5); } }
+.flight .tag { align-self: flex-start; }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr; } .step .frame { aspect-ratio: 5 / 4; } }
+
+/* Flotta */
+.fleet-rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(300px, 1fr); gap: 1px; overflow-x: auto; scroll-snap-type: x mandatory; background: var(--line); border: 1px solid var(--line); scrollbar-width: thin; scrollbar-color: var(--line-2) transparent; }
+.car-card { scroll-snap-align: start; background: var(--ink); padding: 28px 24px 26px; display: flex; flex-direction: column; }
+.car-card .pic { aspect-ratio: 3 / 2; overflow: hidden; margin: -4px -8px 18px; }
+.car-card .pic img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.car-card:hover .pic img { transform: scale(1.04); }
+.car-card .k { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.car-card h3 { font-family: var(--serif); font-weight: 400; font-size: 30px; margin: 6px 0 14px; }
+.specs { display: flex; gap: 22px; font-size: 14px; color: var(--muted); margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); }
+.specs span { display: inline-flex; gap: 8px; align-items: center; }
+.specs svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+/* Fiducia */
+.trust .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 96px); }
+.facts { margin: 36px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.facts div { display: grid; grid-template-columns: 180px 1fr; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.facts dt { color: var(--faint); font-size: 13px; letter-spacing: .06em; }
+.facts dd { margin: 0; }
+.ph { color: var(--gold); }
+.reviews { border: 1px dashed var(--line-2); padding: clamp(24px, 4vw, 44px); align-self: start; }
+.reviews .stars { font-family: var(--serif); font-size: clamp(40px, 11vw, 72px); white-space: nowrap; line-height: 1; color: var(--faint); }
+.reviews h3 { font-family: var(--serif); font-weight: 400; font-size: 30px; margin: 14px 0 10px; }
+.reviews p { color: var(--muted); margin: 0 0 20px; }
+@media (max-width: 860px) { .trust .wrap { grid-template-columns: minmax(0, 1fr); } .facts div { grid-template-columns: 1fr; gap: 2px; } }
+
+/* Chiusura con atmosfera */
+.final { position: relative; min-height: 92svh; display: grid; place-items: center; text-align: center; overflow: hidden; isolation: isolate; border-top: 1px solid var(--line); }
+.final canvas, .final .poster { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
+.final .poster { background: radial-gradient(90% 70% at 70% 105%, rgba(203,182,140,.28), transparent 60%), radial-gradient(60% 50% at 20% 110%, rgba(203,182,140,.12), transparent 70%), var(--ink); }
+.final canvas { filter: blur(18px); opacity: .9; }
+.final h2 { font-size: clamp(48px, 7vw, 112px); }
+.final .lead { margin: 24px auto 36px; }
+.final .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* Footer */
+footer { border-top: 1px solid var(--line); padding: 56px 0 40px; font-size: 14px; color: var(--muted); }
+footer .cols { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 32px; }
+footer h4 { margin: 0 0 12px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); font-weight: 600; }
+footer p { margin: 0 0 6px; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--gold-2); }
+footer .legal { margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--faint); }
+@media (max-width: 860px) { footer .cols { grid-template-columns: 1fr 1fr; } }
+
+/* WhatsApp fisso */
+.wa { position: fixed; right: 16px; bottom: 16px; z-index: 40; width: 54px; height: 54px; display: grid; place-items: center; border-radius: 50%; background: var(--raise); border: 1px solid var(--line-2); color: var(--gold-2); box-shadow: 0 10px 30px rgba(0,0,0,.4); transition: transform .2s var(--ease), border-color .2s; }
+.wa:hover { transform: translateY(-2px); border-color: var(--gold); }
+.wa svg { width: 24px; height: 24px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+.reduced *, .reduced *::before, .reduced *::after { animation: none !important; transition: none !important; }
+.reduced .route { height: auto; }
+.reduced .route-stick { position: relative; height: auto; padding: clamp(88px, 12vw, 168px) 0; }
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Grosso, private chauffeur, home"><b>Grosso</b><small>Private Chauffeur</small></a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#rides">Transfers</a></li>
+      <li><a href="#arrival">Day trips</a></li>
+      <li><a href="#fleet">Fleet</a></li>
+      <li><a href="#about">About</a></li>
+    </ul></nav>
+    <div class="nav-right">
+      <span class="lang"><b>EN</b> · IT</span>
+      <a class="btn" href="#book">Book a ride</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-media">
+      <img id="heroImg" src="img/n-hero-lago-notte-1600.webp" srcset="img/n-hero-lago-notte-800.webp 800w, img/n-hero-lago-notte-1600.webp 1600w, img/n-hero-lago-notte-2400.webp 2400w" sizes="100vw" alt="A black chauffeur car waiting on the lakeside road at night, village lights across the water" fetchpriority="high">
+    </div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="kicker" data-intro>Milan airports · Lake Como · Switzerland</p>
+          <h1 class="display" id="h1" data-split>Your chauffeur is already <em>waiting.</em></h1>
+          <p class="lead" data-intro>Private Mercedes transfers from Malpensa, Linate and Bergamo to Lake Como, the Alps and the Riviera. A fixed price before you book, at any hour.</p>
+          <div class="hero-meta" data-intro><span>Flight tracked</span><span>Name sign at Arrivals</span><span>English-speaking drivers</span></div>
+        </div>
+      </div>
+      <div class="book" id="book" data-intro>
+        <div class="book-panel">
+          <form id="bookForm" novalidate>
+            <div class="field"><label for="from">From</label><select id="from" name="from"></select></div>
+            <div class="field"><label for="to">To</label><select id="to" name="to"></select></div>
+            <div class="field"><label for="date">Date</label><input id="date" name="date" type="date"></div>
+            <div class="field"><label for="pax">Passengers</label><select id="pax" name="pax"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
+            <div class="submit"><button class="btn" type="submit">See prices
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div>
+          </form>
+          <div class="results" id="results" aria-live="polite"><div>
+            <div class="results-head"><h2 id="resTitle">Malpensa → Bellagio</h2><p><span id="resDur">1 h 35</span> · fixed price, tolls and parking included · <span class="tag">Example prices</span></p></div>
+            <ul class="options" id="options"></ul>
+          </div></div>
+        </div>
+        <p class="book-note"><span>Confirmed by a person within minutes. Your card is charged only once we confirm.</span><a href="https://wa.me/393338675746">Prefer WhatsApp? Write to us</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="clock sec" aria-labelledby="clockH">
+    <div class="wrap">
+      <div>
+        <p class="time" aria-hidden="true"><span id="hh">23</span><span class="colon">:</span><span id="mm">41</span></p>
+        <p class="time-cap"><i></i><span>Milano, now · drivers on duty</span></p>
+      </div>
+      <div>
+        <p class="kicker">24 hours, every day</p>
+        <h2 class="display" id="clockH" data-split>Late landing, early flight. <em>Someone answers.</em></h2>
+        <p class="lead">Whatever time you read this in Milan, we are awake. Your flight is tracked, so a delay never costs you a missed pickup.</p>
+        <ul class="incl">
+          <li><span>Waiting time at airports</span><span>60 min included</span></li>
+          <li><span>Tolls, fuel, parking</span><span>Included</span></li>
+          <li><span>Child seats</span><span>On request, free</span></li>
+          <li><span>Water, Wi-Fi, chargers</span><span>In every car</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="route" aria-labelledby="routeH" id="route">
+    <div class="route-stick">
+      <div class="wrap">
+        <div>
+          <p class="kicker">Our most requested ride</p>
+          <h2 class="display" id="routeH">Malpensa to <em>Bellagio.</em></h2>
+          <div class="route-nums" aria-label="92 kilometres, about 1 hour 35 minutes">
+            <div><b id="km">0</b><small>Kilometres</small></div>
+            <div><b id="tm">0:00</b><small>Door to door</small></div>
+          </div>
+          <p class="lead">Motorway to Como, then the slow road along the western shore. Fixed price from <strong style="color:var(--text)">€300</strong> in an E-Class. <span class="tag">Example</span></p>
+        </div>
+        <svg viewBox="0 0 560 640" role="img" aria-label="Route diagram from Malpensa Airport to Bellagio via Como">
+          <defs>
+            <linearGradient id="beam" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#8e7a55"/><stop offset="1" stop-color="#f2e4c2"/></linearGradient>
+          </defs>
+          <g class="lake">
+            <path d="M282 400 C 296 330 340 258 392 196"/>
+            <path d="M505 392 C 482 318 448 248 416 198"/>
+            <path d="M404 196 C 396 150 392 100 412 30"/>
+            <text x="430" y="92">Lake Como</text>
+          </g>
+          <path class="road-bg" id="roadBg" d="M60 590 C 120 560 170 520 210 470 C 240 432 262 410 300 392 C 318 384 330 360 336 330 C 342 300 352 270 372 250 C 392 230 400 205 404 180"/>
+          <path class="road" id="road" d="M60 590 C 120 560 170 520 210 470 C 240 432 262 410 300 392 C 318 384 330 360 336 330 C 342 300 352 270 372 250 C 392 230 400 205 404 180"/>
+          <g class="stop"><circle cx="60" cy="590" r="7"/><text x="80" y="595" class="big">Malpensa</text><text x="80" y="616">Terminal 1 · Arrivals</text></g>
+          <g class="stop"><circle cx="210" cy="470" r="5"/><text x="226" y="476">A8 · A9 motorway</text></g>
+          <g class="stop"><circle cx="300" cy="392" r="5"/><text x="284" y="397" text-anchor="end">Como</text></g>
+          <g class="stop"><circle cx="372" cy="250" r="5"/><text x="250" y="256">Lakeshore road</text></g>
+          <g class="stop end"><circle cx="404" cy="180" r="8"/><text x="424" y="176" class="big">Bellagio</text><text x="424" y="198">your hotel door</text></g>
+          <circle class="car" id="car" r="5" cx="60" cy="590"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="rides sec" id="rides" aria-labelledby="ridesH">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" id="ridesH" data-split>Fixed prices, <em>before you book.</em></h2>
+        <p class="lead">The rides our guests book most. Every price includes the car, the driver, tolls, fuel and parking. No meter, no surprises at the door.</p>
+      </div>
+      <div class="grid">
+        <ul class="ride-list" id="rideList">
+          <li class="ride on" data-img="d-lago"><a href="#book" data-from="MXP" data-to="COMO"><span class="name">Malpensa → Como</span><span class="dur">50 min</span><span class="from">from <b>€190</b></span></a></li>
+          <li class="ride" data-img="r-hero-villa"><a href="#book" data-from="MXP" data-to="BELLAGIO"><span class="name">Malpensa → Bellagio</span><span class="dur">1 h 35</span><span class="from">from <b>€300</b></span></a></li>
+          <li class="ride" data-img="d-lago"><a href="#book" data-from="LIN" data-to="VARENNA"><span class="name">Linate → Varenna</span><span class="dur">1 h 20</span><span class="from">from <b>€270</b></span></a></li>
+          <li class="ride" data-img="n-hero-lago-notte"><a href="#book" data-from="BGY" data-to="TREMEZZO"><span class="name">Bergamo → Tremezzo</span><span class="dur">1 h 35</span><span class="from">from <b>€280</b></span></a></li>
+          <li class="ride" data-img="p-alpi-aereo"><a href="#book" data-from="MIL" data-to="LUGANO"><span class="name">Milan → Lugano <small>CH</small></span><span class="dur">1 h 05</span><span class="from">from <b>€240</b></span></a></li>
+          <li class="ride" data-img="d-st-moritz"><a href="#book" data-from="MXP" data-to="STMORITZ"><span class="name">Malpensa → St. Moritz <small>CH</small></span><span class="dur">3 h 30</span><span class="from">from <b>€590</b></span></a></li>
+          <li class="ride" data-img="d-portofino"><a href="#book" data-from="MIL" data-to="PORTOFINO"><span class="name">Milan → Portofino</span><span class="dur">2 h 30</span><span class="from">from <b>€420</b></span></a></li>
+        </ul>
+        <figure class="ride-stage" id="rideStage" aria-hidden="true">
+          <img class="on" data-key="d-lago" src="img/d-lago-800.webp" alt="">
+          <img data-key="r-hero-villa" src="img/r-hero-villa-800.webp" alt="" loading="lazy">
+          <img data-key="n-hero-lago-notte" src="img/n-hero-lago-notte-800.webp" alt="" loading="lazy">
+          <img data-key="p-alpi-aereo" src="img/p-alpi-aereo-800.webp" alt="" loading="lazy">
+          <img data-key="d-st-moritz" src="img/d-st-moritz-800.webp" alt="" loading="lazy">
+          <img data-key="d-portofino" src="img/d-portofino-800.webp" alt="" loading="lazy">
+          <figcaption>Indicative image</figcaption>
+        </figure>
+      </div>
+      <p class="rides-foot">Example prices for an E-Class, up to 3 passengers. Any other address: price in the booking form.</p>
+    </div>
+  </section>
+
+  <section class="ritual sec" id="arrival" aria-labelledby="ritualH">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" id="ritualH" data-split>The arrival, <em>taken care of.</em></h2>
+        <p class="lead">After a long flight the last thing you want is a queue, a meter or a stranger's car. Three things happen every time.</p>
+      </div>
+      <div class="steps">
+        <article class="step" data-reveal>
+          <div class="frame">
+            <div class="flight" aria-label="Example of a tracked flight">
+              <span class="tag">Example</span>
+              <div class="row"><span>Flight</span><b>AA 198</b></div>
+              <div class="row"><span>New York JFK → Malpensa</span><span>+18 min</span></div>
+              <p class="status"><i></i>Landed 08:12 · your driver is at the gate</p>
+            </div>
+          </div>
+          <span class="n">i.</span><h3>We watch your flight</h3><p>Early or late, the pickup time follows your landing. You never call to say you're delayed.</p>
+        </article>
+        <article class="step" data-reveal>
+          <div class="frame"><img src="img/n-portiera-aeroporto-800.webp" srcset="img/n-portiera-aeroporto-800.webp 800w, img/n-portiera-aeroporto-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 33vw" alt="Indicative image: a chauffeur holding the car door at the airport at night" loading="lazy"></div>
+          <span class="n">ii.</span><h3>Your name at Arrivals</h3><p>Your driver waits with a sign, takes your luggage and walks you to the car parked a few steps away.</p>
+        </article>
+        <article class="step" data-reveal>
+          <div class="frame"><img src="img/n-interni-notte-800.webp" srcset="img/n-interni-notte-800.webp 800w, img/n-interni-notte-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 33vw" alt="Indicative image: rear seat of a chauffeur car at night with city lights outside" loading="lazy"></div>
+          <span class="n">iii.</span><h3>Then, quiet</h3><p>Water, Wi-Fi and a charger are ready. Talk, sleep, or watch the lake appear. The road is our job.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="fleet" aria-labelledby="fleetH">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" id="fleetH" data-split>Four Mercedes, <em>one standard.</em></h2>
+        <p class="lead">Black, spotless, prepared before every ride. Choose by passengers and luggage; the booking form only shows the cars that fit.</p>
+      </div>
+      <div class="fleet-rail" role="list">
+        <article class="car-card" role="listitem"><div class="pic"><img src="img/f-berlina-800.webp" alt="Indicative image of a black business sedan" loading="lazy"></div><span class="k">Business sedan</span><h3>E-Class</h3><p class="lead" style="font-size:15px">The everyday choice for couples and business travel.</p><div class="specs"><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg>3</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="7" width="14" height="13" rx="2"/><path d="M9 7V4h6v3"/></svg>2</span></div></article>
+        <article class="car-card" role="listitem"><div class="pic"><img src="img/f-berlina-800.webp" alt="Indicative image of a black first class sedan" loading="lazy" style="object-position:70% 50%"></div><span class="k">First class</span><h3>S-Class</h3><p class="lead" style="font-size:15px">For events, executives and the long drives to the Alps.</p><div class="specs"><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg>3</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="7" width="14" height="13" rx="2"/><path d="M9 7V4h6v3"/></svg>2</span></div></article>
+        <article class="car-card" role="listitem"><div class="pic"><img src="img/f-van-800.webp" alt="Indicative image of a black executive van with the side door open" loading="lazy"></div><span class="k">Executive van</span><h3>V-Class</h3><p class="lead" style="font-size:15px">Families and small groups, face-to-face leather seats.</p><div class="specs"><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg>7</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="7" width="14" height="13" rx="2"/><path d="M9 7V4h6v3"/></svg>6</span></div></article>
+        <article class="car-card" role="listitem"><div class="pic"><img src="img/f-van-800.webp" alt="Indicative image of a black group van" loading="lazy" style="object-position:30% 50%"></div><span class="k">Group van</span><h3>Vito</h3><p class="lead" style="font-size:15px">Eight seats for groups, golf bags and ski gear.</p><div class="specs"><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg>8</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="7" width="14" height="13" rx="2"/><path d="M9 7V4h6v3"/></svg>6</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust sec" id="about" aria-labelledby="aboutH" style="background:var(--night);border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Who drives you</p>
+        <h2 class="display" id="aboutH" data-split style="font-size:clamp(38px,4.4vw,64px)">A licensed Italian company, <em>not an app.</em></h2>
+        <p class="lead" style="margin-top:22px">Grosso Service is run by Federico Grosso from Bariano, between Milan and Bergamo. Every ride runs under our own NCC licence, in our own cars, with professional drivers we know by name.</p>
+        <dl class="facts">
+          <div><dt>NCC licence</dt><dd><span class="ph">No. [to be added]</span> · Municipality of [to be added]</dd></div>
+          <div><dt>Company</dt><dd>Grosso Service di Federico Grosso · VAT IT13224830961</dd></div>
+          <div><dt>Base</dt><dd>Via Piemonte 18, Bariano (BG), Italy</dd></div>
+          <div><dt>Languages</dt><dd>English, Italian <span class="ph">[to be confirmed]</span></dd></div>
+        </dl>
+      </div>
+      <aside class="reviews" aria-label="Reviews placeholder">
+        <span class="tag">Placeholder</span>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <h3>Google reviews, live</h3>
+        <p>At launch this block shows the real rating and the latest reviews from Grosso's Google profile, each linked to its source. We never publish reviews we cannot link.</p>
+        <a class="btn ghost" href="#book">Read all reviews</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="finalH">
+    <div class="poster" aria-hidden="true"></div>
+    <canvas id="atmo" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <h2 class="display" id="finalH" data-split>Tell us when you land. <em>We'll be there.</em></h2>
+      <p class="lead">Book online in two minutes, or send a message: a person replies, day or night.</p>
+      <div class="ctas">
+        <a class="btn" href="#book">Book a ride</a>
+        <a class="btn ghost" href="https://wa.me/393338675746"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>WhatsApp +39 333 867 5746</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><a class="brand" href="#top"><b>Grosso</b><small>Private Chauffeur</small></a><p style="margin-top:18px;max-width:34ch">Private chauffeur service from Milan's airports to Lake Como, Switzerland and the Riviera.</p></div>
+      <div><h4>Transfers</h4><p><a href="#rides">Malpensa</a></p><p><a href="#rides">Linate</a></p><p><a href="#rides">Bergamo</a></p></div>
+      <div><h4>Contact</h4><p><a href="https://wa.me/393338675746">WhatsApp</a></p><p><a href="tel:+393338675746">+39 333 867 5746</a></p><p>24/7, every day</p></div>
+      <div><h4>Company</h4><p>Via Piemonte 18</p><p>24050 Bariano (BG)</p><p>VAT IT13224830961</p></div>
+    </div>
+    <div class="legal"><span>© Grosso Service di Federico Grosso · NCC licence no. [to be added]</span><span>Privacy · Cookies · Terms</span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/393338675746" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+
+<script src="assets/demo.js?v=4"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  const { reduced } = GS;
+  GS.presenterChip('a');
+
+  // Navigazione: sfondo pieno dopo l'hero
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('solid', scrollY > 40);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // Modulo di prenotazione (demo)
+  const f = document.getElementById('bookForm');
+  GS.fillSelect(f.from, GS.ORIGINS, 'MXP');
+  GS.fillSelect(f.to, GS.DESTINATIONS, 'BELLAGIO');
+  const d = new Date(); d.setDate(d.getDate() + 14); f.date.value = d.toISOString().slice(0, 10);
+  const results = document.getElementById('results');
+  const people = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg>';
+  function render() {
+    const q = GS.quote(f.from.value, f.to.value, f.pax.value);
+    document.getElementById('resTitle').textContent = `${q.from.short} → ${q.to.label}`;
+    document.getElementById('resDur').textContent = GS.duration(q.minutes);
+    document.getElementById('options').innerHTML = q.options.map(o => `
+      <li class="opt" aria-disabled="${!o.fits}">
+        <h3>${o.name}</h3><span class="k">${o.kind}</span>
+        <span class="price">${GS.euro(o.price)}</span>
+        <span class="cap"><span>${o.seats} passengers</span><span>${o.bags} bags</span></span>
+        <button type="button" ${o.fits ? '' : 'disabled'}>${o.fits ? 'Request this car' : 'Too small for your group'}</button>
+      </li>`).join('');
+    results.classList.add('open');
+  }
+  f.addEventListener('submit', e => { e.preventDefault(); render(); });
+  f.addEventListener('change', () => { if (results.classList.contains('open')) render(); });
+  document.getElementById('options').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b || b.disabled) return;
+    const li = b.closest('.opt'); li.classList.add('sent'); b.textContent = 'Request sent · confirmation within minutes';
+  });
+  document.querySelectorAll('.ride a').forEach(a => a.addEventListener('click', () => {
+    f.from.value = a.dataset.from; f.to.value = a.dataset.to; setTimeout(render, 350);
+  }));
+
+  // Orologio di Milano
+  GS.milanClock(t => { const [h, m] = t.split(':'); hh.textContent = h; mm.textContent = m; });
+
+  // Tratte: immagine che cambia con la riga attiva
+  const stage = document.getElementById('rideStage');
+  document.querySelectorAll('.ride').forEach(li => {
+    const on = () => {
+      document.querySelectorAll('.ride').forEach(x => x.classList.toggle('on', x === li));
+      stage.querySelectorAll('img').forEach(img => img.classList.toggle('on', img.dataset.key === li.dataset.img));
+    };
+    li.addEventListener('mouseenter', on); li.querySelector('a').addEventListener('focus', on);
+  });
+
+  // Atmosfera della chiusura: pieghe di luce champagne, lente, ferme fuori schermo
+  (function atmosphere() {
+    const c = document.getElementById('atmo');
+    if (reduced || !c.getContext) { c.remove(); return; }
+    const ctx = c.getContext('2d');
+    const folds = Array.from({ length: 7 }, (_, i) => ({ x: .15 + i * .12, w: .1 + (i % 3) * .05, s: .00012 + i * .00003, p: i * 1.7, a: .16 + (i % 2) * .08 }));
+    let w = 0, h = 0, raf = 0, visible = false;
+    const size = () => { const r = c.getBoundingClientRect(); w = c.width = Math.max(1, Math.round(r.width * .5)); h = c.height = Math.max(1, Math.round(r.height * .5)); };
+    const draw = t => {
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalCompositeOperation = 'lighter';
+      for (const f of folds) {
+        const x = (f.x + Math.sin(t * f.s + f.p) * .06) * w, fw = f.w * w;
+        const g = ctx.createLinearGradient(0, 0, 0, h);
+        g.addColorStop(0, 'rgba(203,182,140,0)'); g.addColorStop(.55, `rgba(203,182,140,${f.a * .35})`); g.addColorStop(1, `rgba(228,212,174,${f.a * (0.8 + Math.sin(t * f.s * 2 + f.p) * .2)})`);
+        const gx = ctx.createLinearGradient(x - fw, 0, x + fw, 0);
+        ctx.fillStyle = g; ctx.save(); ctx.beginPath();
+        ctx.ellipse(x, h * .78, fw, h * .62, Math.sin(t * f.s + f.p) * .08, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+      }
+      const r = ctx.createRadialGradient(w * .72, h * 1.05, 0, w * .72, h * 1.05, w * .6);
+      r.addColorStop(0, 'rgba(228,212,174,.35)'); r.addColorStop(1, 'rgba(228,212,174,0)');
+      ctx.fillStyle = r; ctx.fillRect(0, 0, w, h);
+      ctx.globalCompositeOperation = 'source-over';
+      if (visible && !document.hidden) raf = requestAnimationFrame(draw);
+    };
+    const start = () => { cancelAnimationFrame(raf); if (visible && !document.hidden) raf = requestAnimationFrame(draw); };
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; start(); }).observe(c);
+    document.addEventListener('visibilitychange', start);
+    addEventListener('resize', size); size();
+  })();
+
+  // Animazioni
+  if (reduced || !window.gsap) {
+    document.getElementById('km').textContent = '92';
+    document.getElementById('tm').textContent = '1:35';
+    return;
+  }
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  tl.from('#heroImg', { scale: 1.14, duration: 2.6, ease: 'power2.out' }, 0)
+    .from('.nav .wrap > *', { autoAlpha: 0, y: -12, duration: .8, stagger: .08 }, .2)
+    .from(GS.splitWords(document.getElementById('h1')), { yPercent: 110, duration: 1.1, stagger: .07 }, .35)
+    .from('.hero [data-intro]', { autoAlpha: 0, y: 24, duration: .9, stagger: .12 }, .8);
+
+  document.querySelectorAll('h2[data-split]').forEach(h => {
+    gsap.from(GS.splitWords(h), { yPercent: 110, duration: 1, ease: 'power3.out', stagger: .05, scrollTrigger: { trigger: h, start: 'top 85%' } });
+  });
+  gsap.utils.toArray('[data-reveal]').forEach((el, i) => {
+    gsap.from(el.querySelector('.frame'), { clipPath: 'inset(100% 0 0 0)', duration: 1.2, ease: 'power3.inOut', delay: i * .08, scrollTrigger: { trigger: el, start: 'top 85%' } });
+    gsap.from(el.querySelectorAll('.n, h3, p'), { autoAlpha: 0, y: 16, duration: .7, stagger: .06, delay: .3 + i * .08, scrollTrigger: { trigger: el, start: 'top 85%' } });
+  });
+  gsap.from('.ride', { autoAlpha: 0, y: 18, duration: .6, stagger: .06, scrollTrigger: { trigger: '#rideList', start: 'top 80%' } });
+  gsap.from('.car-card', { autoAlpha: 0, y: 30, duration: .8, stagger: .1, scrollTrigger: { trigger: '.fleet-rail', start: 'top 85%' } });
+
+  // Tratta: la strada si accende con lo scorrimento, chilometri e minuti salgono
+  const road = document.getElementById('road'), car = document.getElementById('car');
+  const len = road.getTotalLength();
+  road.style.strokeDasharray = len; road.style.strokeDashoffset = len;
+  const km = document.getElementById('km'), tm = document.getElementById('tm');
+  const state = { p: 0 };
+  gsap.to(state, {
+    p: 1, ease: 'none',
+    scrollTrigger: matchMedia('(max-width: 860px)').matches
+      ? { trigger: '#route svg', start: 'top 85%', end: 'bottom 45%', scrub: .6 }
+      : { trigger: '#route', start: 'top top', end: 'bottom bottom', scrub: .6 },
+    onUpdate() {
+      const p = state.p;
+      road.style.strokeDashoffset = len * (1 - p);
+      const pt = road.getPointAtLength(len * p); car.setAttribute('cx', pt.x); car.setAttribute('cy', pt.y);
+      km.textContent = Math.round(92 * p);
+      const mins = Math.round(95 * p); tm.textContent = `${Math.floor(mins / 60)}:${String(mins % 60).padStart(2, '0')}`;
+    },
+  });
+  addEventListener('load', () => ScrollTrigger.refresh());
+})();
+</script>
+</body>
+</html>

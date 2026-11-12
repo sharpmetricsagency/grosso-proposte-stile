@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grosso · Proposta B · Riviera</title>
+<meta name="robots" content="noindex">
+<!-- Mockup indicativo. Immagini generate con Higgsfield (GPT Image 2.6) solo per l'atmosfera: nel sito vero foto reali. Prezzi e tempi di esempio. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/r-hero-villa-1200.webp">
+<link rel="stylesheet" href="assets/chip.css?v=3">
+<style>
+:root {
+  --paper: #f3eee4; --paper-2: #ebe4d7; --sand: #ddd3c1; --ivory: #faf7f1;
+  --ink: #1c1b19; --ink-2: #45423b; --muted: #6f695e; --line: rgba(28, 27, 25, .14); --line-2: rgba(28, 27, 25, .28);
+  --lake: #2d5651; --lake-2: #3e6c65; --lake-wash: rgba(45, 86, 81, .08);
+  --night: #171614; --night-text: #ece6da; --night-muted: rgba(236, 230, 218, .62); --night-line: rgba(236, 230, 218, .14);
+  --display: 'Libre Caslon Display', 'Didot', Georgia, serif; --text: 'Libre Caslon Text', Georgia, serif; --sans: 'Hanken Grotesk', system-ui, sans-serif;
+  --pad: clamp(16px, 4vw, 56px); --max: 1360px; --ease: cubic-bezier(.2, .7, .1, 1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 96px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+button, input, select { font: inherit; color: inherit; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+:focus-visible { outline: 1.5px solid var(--lake); outline-offset: 3px; }
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.w > span { display: inline-block; }
+
+.display { font-family: var(--display); font-weight: 400; line-height: 1.04; letter-spacing: -.012em; margin: 0; }
+.display em { font-family: var(--text); font-style: italic; color: var(--lake); letter-spacing: -.02em; }
+.label { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 18px; }
+.lead { font-size: clamp(16px, 1.25vw, 18px); color: var(--ink-2); max-width: 44ch; margin: 0; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 0 26px; border: 1px solid var(--ink); background: var(--ink); color: var(--ivory); font-weight: 600; font-size: 14px; letter-spacing: .03em; text-decoration: none; cursor: pointer; transition: background .2s var(--ease), color .2s, border-color .2s; }
+.btn:hover { background: var(--lake); border-color: var(--lake); }
+.btn.line { background: transparent; color: var(--ink); border-color: var(--line-2); }
+.btn.line:hover { border-color: var(--ink); background: var(--ivory); }
+.tag { display: inline-block; padding: 2px 8px; border: 1px solid var(--line-2); font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); vertical-align: middle; }
+
+/* Testata */
+.top { border-bottom: 1px solid var(--line); font-size: 12.5px; color: var(--muted); }
+.top .wrap { display: flex; justify-content: space-between; gap: 16px; height: 38px; align-items: center; }
+.top a { text-decoration: none; }
+.top b { color: var(--ink); font-weight: 600; }
+.head { position: sticky; top: 0; z-index: 40; background: rgba(243, 238, 228, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.head .wrap { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 84px; gap: 24px; }
+.head ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.head ul a { text-decoration: none; color: var(--ink-2); }
+.head ul a:hover { color: var(--lake); }
+.brand { text-align: center; text-decoration: none; line-height: 1; }
+.brand b { display: block; font-family: var(--display); font-weight: 400; font-size: 36px; letter-spacing: .01em; }
+.brand small { display: block; margin-top: 6px; font-size: 9.5px; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: var(--lake); }
+.head-right { display: flex; justify-content: flex-end; align-items: center; gap: 20px; font-size: 13px; color: var(--muted); }
+.head-right b { color: var(--ink); }
+.head .btn { min-height: 44px; padding: 0 20px; }
+@media (max-width: 900px) {
+  .top .hide-s { display: none; }
+  .head .wrap { grid-template-columns: auto 1fr; height: 70px; }
+  .head nav, .head-right .lang { display: none; }
+  .top .wrap > span:first-child { display: none; } .top .wrap { justify-content: flex-end; }
+  .brand { text-align: left; } .brand b { font-size: 28px; }
+}
+
+/* Hero */
+.hero { padding: clamp(40px, 6vw, 88px) 0 clamp(56px, 7vw, 104px); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 88px); align-items: start; }
+.hero h1 { font-size: clamp(48px, 5.8vw, 92px); margin-bottom: 26px; }
+.hero-photos { position: relative; padding-bottom: 72px; }
+.ph-main { aspect-ratio: 4 / 5; overflow: hidden; background: var(--sand); }
+.ph-main img { width: 100%; height: 100%; object-fit: cover; }
+.ph-small { position: absolute; left: -12%; bottom: 0; width: 46%; aspect-ratio: 3 / 2; overflow: hidden; border: 10px solid var(--paper); background: var(--sand); }
+.ph-small img { width: 100%; height: 100%; object-fit: cover; }
+.cap { display: flex; justify-content: space-between; gap: 12px; font: italic 14px var(--text); color: var(--muted); margin-top: 10px; padding-left: 36%; }
+@media (max-width: 960px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
+  .hero-photos { order: -1; padding-bottom: 48px; }
+  .ph-main { aspect-ratio: 4 / 3.6; }
+  .ph-small { left: auto; right: 8px; width: 44%; }
+  .cap { padding: 0 50% 0 0; flex-direction: column; gap: 0; }
+}
+
+/* Prenotazione */
+.book { margin-top: 34px; background: var(--ivory); border: 1px solid var(--line); }
+.book form { display: grid; grid-template-columns: 1fr 1fr; }
+.field { padding: 14px 18px 12px; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); }
+.field:nth-child(2n) { border-right: 0; }
+.field label { display: block; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.field select, .field input { width: 100%; border: 0; background: none; padding: 4px 0 0; font: 400 19px var(--text); appearance: none; -webkit-appearance: none; cursor: pointer; }
+.field select:focus, .field input:focus { outline: none; }
+.field:focus-within { background: var(--paper); }
+.field:focus-within label { color: var(--lake); }
+.book .go { grid-column: 1 / -1; padding: 14px; }
+.book .go .btn { width: 100%; }
+.book-foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 12px; font-size: 13px; color: var(--muted); }
+.book-foot a { color: var(--lake); }
+.results { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s var(--ease); }
+.results.open { grid-template-rows: 1fr; }
+.results > div { overflow: hidden; }
+.res-head { padding: 18px 18px 6px; border-top: 1px solid var(--line); }
+.res-head h2 { font: 400 26px/1.1 var(--display); margin: 0 0 4px; }
+.res-head p { margin: 0; font-size: 13px; color: var(--muted); }
+.opts { list-style: none; margin: 0; padding: 6px 18px 18px; }
+.opt { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 14px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.opt:last-child { border-bottom: 0; }
+.opt h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.opt small { display: block; font-size: 12.5px; color: var(--muted); }
+.opt .p { font: 400 26px var(--display); }
+.opt button { min-height: 40px; padding: 0 14px; border: 1px solid var(--line-2); background: none; font-size: 13px; font-weight: 600; cursor: pointer; }
+.opt button:hover { border-color: var(--ink); }
+.opt[aria-disabled="true"] { opacity: .45; }
+.opt.sent button { background: var(--lake); color: var(--ivory); border-color: var(--lake); }
+@media (max-width: 480px) { .opt { grid-template-columns: 1fr auto; } .opt button { grid-column: 1 / -1; } }
+
+/* Nomi dei luoghi */
+.loop { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 22px 0; background: var(--paper-2); }
+.loop-track { display: flex; width: max-content; animation: loop 60s linear infinite; }
+.loop.paused .loop-track { animation-play-state: paused; }
+.loop span { font: italic 400 clamp(26px, 3vw, 40px) var(--text); color: var(--ink-2); white-space: nowrap; padding: 0 28px; }
+.loop span::after { content: "·"; margin-left: 56px; color: var(--lake); font-style: normal; }
+@keyframes loop { to { transform: translateX(-50%); } }
+
+/* Sezioni */
+.sec { padding: clamp(88px, 11vw, 160px) 0; }
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: end; margin-bottom: clamp(40px, 6vw, 80px); }
+.sec-head h2 { font-size: clamp(40px, 4.6vw, 70px); }
+@media (max-width: 800px) { .sec-head { grid-template-columns: minmax(0, 1fr); gap: 18px; } }
+
+/* La linea del lago */
+.line-sec { background: var(--ivory); border-bottom: 1px solid var(--line); }
+.origin { display: inline-flex; border: 1px solid var(--line-2); margin-bottom: 48px; }
+.origin button { min-height: 42px; padding: 0 18px; border: 0; background: none; font-size: 14px; font-weight: 500; cursor: pointer; color: var(--ink-2); }
+.origin button + button { border-left: 1px solid var(--line-2); }
+.origin button[aria-pressed="true"] { background: var(--ink); color: var(--ivory); }
+.diagram { position: relative; }
+.diagram svg { width: 100%; height: auto; overflow: visible; }
+.rail-bg { stroke: var(--line); stroke-width: 12; fill: none; stroke-linecap: round; }
+.rail { stroke: var(--lake); stroke-width: 12; fill: none; stroke-linecap: round; }
+.rail-in { stroke: var(--ivory); stroke-width: 3; fill: none; stroke-dasharray: 1 13; stroke-linecap: round; }
+.st circle { fill: var(--ivory); stroke: var(--ink); stroke-width: 3; }
+.st.first circle { fill: var(--ink); }
+.st .nm { font: 400 30px var(--display); fill: var(--ink); }
+.st .mt { font: 500 15px var(--sans); fill: var(--muted); letter-spacing: .02em; }
+.st .pr { font: italic 400 20px var(--text); fill: var(--lake); }
+.diagram-v { display: none; list-style: none; margin: 0; padding: 0 0 0 34px; position: relative; }
+.diagram-v::before { content: ""; position: absolute; left: 9px; top: 12px; bottom: 12px; width: 6px; border-radius: 3px; background: var(--lake); }
+.diagram-v li { position: relative; padding: 0 0 30px; }
+.diagram-v li::before { content: ""; position: absolute; left: -34px; top: 6px; width: 20px; height: 20px; border-radius: 50%; background: var(--ivory); border: 3px solid var(--ink); box-sizing: border-box; }
+.diagram-v li:first-child::before { background: var(--ink); }
+.diagram-v b { display: block; font: 400 28px/1.1 var(--display); }
+.diagram-v span { font-size: 14px; color: var(--muted); }
+.diagram-v i { font-family: var(--text); color: var(--lake); margin-left: 8px; }
+.line-note { margin-top: 36px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 18px; }
+@media (max-width: 760px) { .diagram svg { display: none; } .diagram-v { display: block; } }
+
+/* Destinazioni */
+.dest { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: clamp(32px, 5vw, 80px); align-items: stretch; }
+.tabs { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.tab { text-align: left; padding: 22px 0; border: 0; border-bottom: 1px solid var(--line); background: none; cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.tab b { font: 400 clamp(30px, 3vw, 44px)/1.1 var(--display); color: var(--muted); transition: color .2s; }
+.tab span { font-size: 13px; color: var(--muted); }
+.tab[aria-selected="true"] b, .tab:hover b { color: var(--ink); }
+.tab[aria-selected="true"] b::before { content: "— "; color: var(--lake); }
+.panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .85fr); gap: 32px; }
+.panel[hidden] { display: none; }
+.panel .pic { aspect-ratio: 4 / 5; overflow: hidden; background: var(--sand); }
+.panel .pic img { width: 100%; height: 100%; object-fit: cover; }
+.panel h3 { font: 400 32px/1.1 var(--display); margin: 0 0 14px; }
+.panel p { color: var(--ink-2); margin: 0 0 22px; }
+.rows { list-style: none; margin: 0 0 26px; padding: 0; border-top: 1px solid var(--line); }
+.rows li { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.rows li span:last-child { font-family: var(--text); color: var(--lake); white-space: nowrap; }
+@media (max-width: 960px) { .dest { grid-template-columns: minmax(0, 1fr); } .tabs { flex-direction: row; overflow-x: auto; border-top: 0; border-bottom: 1px solid var(--line); gap: 26px; } .tab { border: 0; padding: 12px 0; flex: none; } .tab span { display: none; } .tab b { font-size: 26px; } .tab[aria-selected="true"] { box-shadow: inset 0 -2px var(--lake); } .tab[aria-selected="true"] b::before { content: ""; } }
+@media (max-width: 640px) { .panel { grid-template-columns: minmax(0, 1fr); } .panel .pic { aspect-ratio: 4 / 3; } }
+
+/* Capitolo scuro: flotta */
+.dark { background: var(--night); color: var(--night-text); }
+.dark .lead { color: var(--night-muted); }
+.dark .label { color: rgba(236, 230, 218, .5); }
+.dark .display em { color: #9cc2b9; }
+.cars { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 40px); }
+.cars figure { margin: 0; }
+.cars .pic { aspect-ratio: 3 / 2; overflow: hidden; }
+.cars .pic img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.cars figure:hover img { transform: scale(1.03); }
+.cars figcaption { display: flex; justify-content: space-between; gap: 12px; padding-top: 14px; font-size: 14px; color: var(--night-muted); }
+.cars figcaption b { font: 400 26px var(--display); color: var(--night-text); }
+.spec { margin-top: clamp(40px, 5vw, 64px); width: 100%; border-collapse: collapse; font-size: 15px; }
+.spec th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(236, 230, 218, .45); padding: 0 0 12px; border-bottom: 1px solid var(--night-line); }
+.spec td { padding: 16px 0; border-bottom: 1px solid var(--night-line); color: var(--night-muted); }
+.spec td:first-child { font: 400 24px var(--display); color: var(--night-text); }
+@media (max-width: 760px) { .cars { grid-template-columns: minmax(0, 1fr); } .spec .hide-s { display: none; } }
+
+/* Gesti */
+.gestures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.gestures article { padding: 28px 24px 8px 0; border-right: 1px solid var(--line); }
+.gestures article + article { padding-left: 24px; }
+.gestures article:last-child { border-right: 0; }
+.gestures i { font: italic 400 22px var(--text); color: var(--lake); }
+.gestures h3 { font: 400 28px/1.15 var(--display); margin: 10px 0 10px; }
+.gestures p { margin: 0; color: var(--ink-2); font-size: 15px; }
+@media (max-width: 900px) { .gestures { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .gestures article { border-bottom: 1px solid var(--line); padding: 24px 16px 24px 0 !important; } .gestures article:nth-child(2n) { border-right: 0; padding-left: 16px !important; } }
+@media (max-width: 520px) { .gestures { grid-template-columns: minmax(0, 1fr); } .gestures article { border-right: 0; padding-left: 0 !important; } }
+
+/* Fiducia */
+.proof { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 96px); border-top: 1px solid var(--line); padding-top: clamp(48px, 6vw, 80px); }
+.proof h2 { font-size: clamp(36px, 3.8vw, 56px); }
+.proof dl { margin: 28px 0 0; }
+.proof dl div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.proof dt { color: var(--muted); font-size: 13px; }
+.proof dd { margin: 0; }
+.todo { color: var(--lake); font-family: var(--text); font-style: italic; }
+.review { background: var(--ivory); border: 1px solid var(--line); padding: clamp(24px, 4vw, 44px); align-self: start; }
+.review blockquote { margin: 18px 0; font: italic 400 clamp(22px, 2.2vw, 28px)/1.35 var(--text); color: var(--muted); }
+.review p { margin: 0 0 22px; color: var(--ink-2); font-size: 15px; }
+@media (max-width: 860px) { .proof { grid-template-columns: minmax(0, 1fr); } .proof dl div { grid-template-columns: minmax(0, 1fr); gap: 2px; } }
+
+/* Chiusura */
+.final { position: relative; overflow: hidden; }
+.final .bg { position: absolute; inset: 0; }
+.final .bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; }
+.final .bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(243,238,228,.97) 0%, rgba(243,238,228,.9) 45%, rgba(243,238,228,.2) 100%); }
+.final .wrap { position: relative; padding-top: clamp(96px, 12vw, 180px); padding-bottom: clamp(96px, 12vw, 180px); }
+.final h2 { font-size: clamp(46px, 6vw, 96px); max-width: 12ch; }
+.final .lead { margin: 22px 0 34px; }
+.final .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 760px) { .final .bg::after { background: linear-gradient(180deg, rgba(243,238,228,.94), rgba(243,238,228,.86)); } }
+
+footer { background: var(--paper-2); border-top: 1px solid var(--line); padding: 56px 0 36px; font-size: 14px; color: var(--ink-2); }
+footer .cols { display: grid; grid-template-columns: 1.5fr repeat(3, minmax(0, 1fr)); gap: 32px; }
+footer h4 { margin: 0 0 12px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+footer p { margin: 0 0 6px; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--lake); }
+footer .legal { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--muted); }
+@media (max-width: 760px) { footer .cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+
+.wa { position: fixed; right: 16px; bottom: 16px; z-index: 40; display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 18px 0 14px; border-radius: 999px; background: var(--ivory); border: 1px solid var(--line-2); color: var(--ink); font-size: 14px; font-weight: 600; text-decoration: none; box-shadow: 0 10px 30px rgba(28, 27, 25, .12); }
+.wa svg { width: 22px; height: 22px; color: var(--lake); }
+@media (max-width: 520px) { .wa span { display: none; } .wa { padding: 0 14px; } }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+.reduced *, .reduced *::before, .reduced *::after { animation: none !important; transition: none !important; }
+.reduced .loop-track { flex-wrap: wrap; width: auto; justify-content: center; }
+.reduced .loop span:nth-child(n+13) { display: none; }
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <span>Lake Como · Milan · Switzerland · Riviera</span>
+  <span><span class="hide-s">Every day, 24 hours · </span><a href="https://wa.me/393338675746"><b>+39 333 867 5746</b></a></span>
+</div></div>
+<header class="head"><div class="wrap">
+  <nav aria-label="Main"><ul><li><a href="#line">Transfers</a></li><li><a href="#destinations">Destinations</a></li><li><a href="#fleet">Fleet</a></li><li><a href="#about">About</a></li></ul></nav>
+  <a class="brand" href="#top" aria-label="Grosso, private chauffeur, home"><b>Grosso</b><small>Private Chauffeur · Lake Como</small></a>
+  <div class="head-right"><span class="lang"><b>EN</b> · IT</span><a class="btn" href="#book">Reserve</a></div>
+</div></header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="label" data-intro>Private transfers from Milan's airports</p>
+        <h1 class="display" id="h1" data-split>From the airport to the lake, <em>as a guest.</em></h1>
+        <p class="lead" data-intro>A Mercedes, a driver who knows the lake road, and a price agreed before you fly. From Malpensa, Linate and Bergamo to your hotel door in Bellagio, Varenna or Tremezzo.</p>
+        <div class="book" id="book" data-intro>
+          <form id="bookForm" novalidate>
+            <div class="field"><label for="from">From</label><select id="from"></select></div>
+            <div class="field"><label for="to">To</label><select id="to"></select></div>
+            <div class="field"><label for="date">Date</label><input id="date" type="date"></div>
+            <div class="field"><label for="pax">Guests</label><select id="pax"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
+            <div class="go"><button class="btn" type="submit">See your price</button></div>
+          </form>
+          <div class="results" id="results" aria-live="polite"><div>
+            <div class="res-head"><h2 id="resTitle">Malpensa → Bellagio</h2><p><span id="resDur">1 h 35</span> · tolls, fuel and parking included · <span class="tag">Example prices</span></p></div>
+            <ul class="opts" id="options"></ul>
+          </div></div>
+        </div>
+        <p class="book-foot" data-intro><span>A person confirms every ride within minutes. Your card is charged only then.</span><a href="https://wa.me/393338675746">Or write on WhatsApp</a></p>
+      </div>
+      <div class="hero-photos">
+        <div class="ph-main" id="phMain"><img src="img/r-hero-villa-1200.webp" srcset="img/r-hero-villa-800.webp 800w, img/r-hero-villa-1200.webp 1200w" sizes="(max-width: 960px) 100vw, 56vw" alt="Indicative image: a black car parked below a lakeside villa terrace with lemon trees" fetchpriority="high"></div>
+        <div class="ph-small" id="phSmall"><img src="img/r-bagagli-800.webp" alt="Indicative image: a chauffeur placing a leather suitcase in the car" loading="lazy"></div>
+        <p class="cap"><span>Morning on the lake</span><span>Indicative images</span></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="loop" aria-hidden="true" id="loop"><div class="loop-track">
+    <span>Malpensa</span><span>Linate</span><span>Orio al Serio</span><span>Como</span><span>Cernobbio</span><span>Tremezzo</span><span>Bellagio</span><span>Varenna</span><span>Menaggio</span><span>Lugano</span><span>St. Moritz</span><span>Portofino</span>
+    <span>Malpensa</span><span>Linate</span><span>Orio al Serio</span><span>Como</span><span>Cernobbio</span><span>Tremezzo</span><span>Bellagio</span><span>Varenna</span><span>Menaggio</span><span>Lugano</span><span>St. Moritz</span><span>Portofino</span>
+  </div></div>
+
+  <section class="line-sec sec" id="line" aria-labelledby="lineH">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" id="lineH" data-split>The lake line. <em>Every stop, one price.</em></h2>
+        <p class="lead">Like an old railway map, but door to door. Choose your airport: the times and fixed prices follow you along the shore.</p>
+      </div>
+      <div class="origin" role="group" aria-label="Airport">
+        <button type="button" data-o="MXP" aria-pressed="true">Malpensa</button><button type="button" data-o="LIN" aria-pressed="false">Linate</button><button type="button" data-o="BGY" aria-pressed="false">Bergamo</button>
+      </div>
+      <div class="diagram">
+        <svg viewBox="0 0 1200 260" role="img" aria-labelledby="lineDesc"><desc id="lineDesc">Line from the airport to Como, Tremezzo, Bellagio and Varenna with travel times and prices</desc>
+          <path class="rail-bg" d="M40 120 H1160"/>
+          <path class="rail" id="rail" d="M40 120 H1160"/>
+          <path class="rail-in" d="M40 120 H1160"/>
+          <g id="stations"></g>
+        </svg>
+        <ol class="diagram-v" id="diagramV"></ol>
+      </div>
+      <div class="line-note"><span>Prices for an E-Class up to 3 guests. V-Class and S-Class in the booking form. <span class="tag">Example prices</span></span><a href="#book">Book a stop on the line →</a></div>
+    </div>
+  </section>
+
+  <section class="sec" id="destinations" aria-labelledby="destH">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" id="destH" data-split>Beyond the lake, <em>the same care.</em></h2>
+        <p class="lead">Day trips and long transfers with the same driver all day, waiting while you have lunch in St. Moritz or walk the harbour in Portofino.</p>
+      </div>
+      <div class="dest">
+        <div class="tabs" role="tablist" aria-label="Destinations">
+          <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true"><b>Lake Como</b><span>from 50 min</span></button>
+          <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><b>The Alps</b><span>from 1 h 05</span></button>
+          <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1"><b>The Riviera</b><span>from 2 h 30</span></button>
+        </div>
+        <div>
+          <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
+            <div class="pic"><img src="img/d-lago-800.webp" srcset="img/d-lago-800.webp 800w, img/d-lago-1200.webp 1200w" sizes="(max-width: 640px) 100vw, 30vw" alt="Indicative image: pastel houses of a village on Lake Como at golden hour" loading="lazy"></div>
+            <div><h3>Lake Como</h3><p>Villas, ferries and the narrow road along the western shore. We drive it every day, and we know where a large van can and cannot stop.</p>
+              <ul class="rows"><li><span>Malpensa → Como</span><span>50 min · €190</span></li><li><span>Linate → Varenna</span><span>1 h 20 · €270</span></li><li><span>Bergamo → Tremezzo</span><span>1 h 35 · €280</span></li></ul>
+              <a class="btn line" href="#book">Plan this ride</a></div>
+          </div>
+          <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+            <div class="pic"><img src="img/d-st-moritz-800.webp" srcset="img/d-st-moritz-800.webp 800w, img/d-st-moritz-1200.webp 1200w" sizes="(max-width: 640px) 100vw, 30vw" alt="Indicative image: alpine pass road above a turquoise lake in autumn" loading="lazy"></div>
+            <div><h3>Lugano &amp; St. Moritz</h3><p>Across the border in comfort, with the Swiss motorway vignette already on the windscreen. Snow tyres in winter, as standard.</p>
+              <ul class="rows"><li><span>Milan → Lugano</span><span>1 h 05 · €240</span></li><li><span>Malpensa → St. Moritz</span><span>3 h 30 · €590</span></li><li><span>Linate → St. Moritz</span><span>3 h 20 · €560</span></li></ul>
+              <a class="btn line" href="#book">Plan this ride</a></div>
+          </div>
+          <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+            <div class="pic"><img src="img/d-portofino-800.webp" srcset="img/d-portofino-800.webp 800w, img/d-portofino-1200.webp 1200w" sizes="(max-width: 640px) 100vw, 30vw" alt="Indicative image: colourful harbour on the Italian Riviera" loading="lazy"></div>
+            <div><h3>Portofino &amp; Cinque Terre</h3><p>From the lakes to the sea in one morning. Ask for a stop on the way: the price is agreed before you leave.</p>
+              <ul class="rows"><li><span>Milan → Portofino</span><span>2 h 30 · €420</span></li><li><span>Malpensa → Portofino</span><span>2 h 50 · €470</span></li><li><span>Linate → Portofino</span><span>2 h 30 · €430</span></li></ul>
+              <a class="btn line" href="#book">Plan this ride</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark sec" id="fleet" aria-labelledby="fleetH">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" id="fleetH" data-split>Four cars, <em>all black, all Mercedes.</em></h2>
+        <p class="lead">A sedan for two, a van for the family and the luggage. The booking form only offers the cars that fit your group.</p>
+      </div>
+      <div class="cars">
+        <figure data-reveal><div class="pic"><img src="img/f-berlina-1600.webp" alt="Indicative image of a black sedan in a dark studio" loading="lazy"></div><figcaption><b>Sedans</b><span>E-Class · S-Class</span></figcaption></figure>
+        <figure data-reveal><div class="pic"><img src="img/f-van-1600.webp" alt="Indicative image of a black van with the side door open" loading="lazy"></div><figcaption><b>Vans</b><span>V-Class · Vito</span></figcaption></figure>
+      </div>
+      <table class="spec">
+        <thead><tr><th scope="col">Car</th><th scope="col">Guests</th><th scope="col">Luggage</th><th scope="col" class="hide-s">Best for</th></tr></thead>
+        <tbody>
+          <tr><td>E-Class</td><td>up to 3</td><td>2 large</td><td class="hide-s">Couples, business</td></tr>
+          <tr><td>S-Class</td><td>up to 3</td><td>2 large</td><td class="hide-s">Events, first class</td></tr>
+          <tr><td>V-Class</td><td>up to 7</td><td>6 large</td><td class="hide-s">Families, small groups</td></tr>
+          <tr><td>Vito</td><td>up to 8</td><td>6 large</td><td class="hide-s">Groups, golf and ski bags</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="gestH">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" id="gestH" data-split>Four small gestures, <em>every time.</em></h2>
+        <p class="lead">Nothing extraordinary. Just the things a good hotel would do, done before you have to ask.</p>
+      </div>
+      <div class="gestures">
+        <article data-g><i>i.</i><h3>Your name at Arrivals</h3><p>We follow your flight; if it lands late, we are still there, without extra cost for the first hour.</p></article>
+        <article data-g><i>ii.</i><h3>Bags, handled</h3><p>From the trolley to the trunk to the hotel reception. You carry nothing.</p></article>
+        <article data-g><i>iii.</i><h3>Water and quiet</h3><p>Cold water, Wi-Fi, chargers, and a driver who talks only if you want to.</p></article>
+        <article data-g><i>iv.</i><h3>The right door</h3><p>Many lake hotels are on narrow lanes. We know which entrance to use.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="about" aria-labelledby="aboutH" style="padding-top:0">
+    <div class="wrap">
+      <div class="proof">
+        <div>
+          <p class="label">Who drives you</p>
+          <h2 class="display" id="aboutH" data-split>A family name on the door, <em>not an app.</em></h2>
+          <p class="lead" style="margin-top:20px">Grosso Service is Federico Grosso's company, based between Milan and Bergamo. Licensed for private hire (NCC), with its own cars and drivers.</p>
+          <dl>
+            <div><dt>NCC licence</dt><dd><span class="todo">no. and municipality to be added</span></dd></div>
+            <div><dt>Company</dt><dd>Grosso Service di Federico Grosso · VAT IT13224830961</dd></div>
+            <div><dt>Address</dt><dd>Via Piemonte 18, 24050 Bariano (BG)</dd></div>
+            <div><dt>Languages</dt><dd>English, Italian <span class="todo">to be confirmed</span></dd></div>
+          </dl>
+        </div>
+        <aside class="review" aria-label="Reviews placeholder">
+          <span class="tag">Placeholder</span>
+          <blockquote>Real reviews from Grosso's Google profile appear here, with the guest's name, date and a link to the source.</blockquote>
+          <p>We publish only reviews that can be verified. Rating and count update by themselves.</p>
+          <a class="btn line" href="#book">All reviews on Google</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="finalH">
+    <div class="bg" aria-hidden="true"><img src="img/d-lago-1200.webp" alt="" loading="lazy"></div>
+    <div class="wrap">
+      <h2 class="display" id="finalH" data-split>Your car will be at <em>Arrivals.</em></h2>
+      <p class="lead">Send us your flight number. We take care of the rest, from the gate to the lake.</p>
+      <div class="ctas"><a class="btn" href="#book">Reserve a transfer</a><a class="btn line" href="https://wa.me/393338675746">WhatsApp +39 333 867 5746</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><a class="brand" href="#top" style="text-align:left"><b>Grosso</b><small>Private Chauffeur · Lake Como</small></a></div>
+      <div><h4>Airports</h4><p><a href="#line">Malpensa</a></p><p><a href="#line">Linate</a></p><p><a href="#line">Bergamo</a></p></div>
+      <div><h4>Contact</h4><p><a href="https://wa.me/393338675746">WhatsApp</a></p><p><a href="tel:+393338675746">+39 333 867 5746</a></p><p>24 hours, every day</p></div>
+      <div><h4>Company</h4><p>Via Piemonte 18</p><p>24050 Bariano (BG)</p><p>VAT IT13224830961</p></div>
+    </div>
+    <div class="legal"><span>© Grosso Service di Federico Grosso · NCC licence no. [to be added]</span><span>Privacy · Cookies · Terms</span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/393338675746"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg><span>WhatsApp</span></a>
+
+<script src="assets/demo.js?v=4"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  const { reduced } = GS;
+  GS.presenterChip('b');
+
+  // Prenotazione (demo)
+  const f = document.getElementById('bookForm');
+  GS.fillSelect(f.from, GS.ORIGINS, 'MXP');
+  GS.fillSelect(f.to, GS.DESTINATIONS, 'BELLAGIO');
+  const d = new Date(); d.setDate(d.getDate() + 14); f.date.value = d.toISOString().slice(0, 10);
+  const results = document.getElementById('results');
+  function render() {
+    const q = GS.quote(f.from.value, f.to.value, f.pax.value);
+    document.getElementById('resTitle').textContent = `${q.from.short} → ${q.to.label}`;
+    document.getElementById('resDur').textContent = GS.duration(q.minutes);
+    document.getElementById('options').innerHTML = q.options.map(o => `
+      <li class="opt" aria-disabled="${!o.fits}"><div><h3>${o.name}</h3><small>${o.kind} · ${o.seats} guests · ${o.bags} bags</small></div>
+      <span class="p">${GS.euro(o.price)}</span><button type="button" ${o.fits ? '' : 'disabled'}>${o.fits ? 'Choose' : 'Too small'}</button></li>`).join('');
+    results.classList.add('open');
+  }
+  f.addEventListener('submit', e => { e.preventDefault(); render(); });
+  f.addEventListener('change', () => { if (results.classList.contains('open')) render(); });
+  document.getElementById('options').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b || b.disabled) return;
+    b.closest('.opt').classList.add('sent'); b.textContent = 'Requested';
+  });
+
+  // Scorrimento dei luoghi: fermo quando non si vede
+  const loop = document.getElementById('loop');
+  new IntersectionObserver(([e]) => loop.classList.toggle('paused', !e.isIntersecting)).observe(loop);
+
+  // La linea del lago
+  const STOPS = ['COMO', 'TREMEZZO', 'BELLAGIO', 'VARENNA'];
+  const xs = [40, 330, 600, 870, 1160];
+  const g = document.getElementById('stations'), v = document.getElementById('diagramV');
+  function drawLine(origin) {
+    const o = GS.ORIGINS[origin];
+    const items = [{ name: o.short, meta: o.code === 'MIL' ? '' : 'Airport · ' + o.code, first: true }]
+      .concat(STOPS.map(k => { const q = GS.quote(origin, k, 1); return { name: q.to.label, meta: GS.duration(q.minutes), price: 'from ' + GS.euro(q.options[0].price) }; }));
+    g.innerHTML = items.map((it, i) => `
+      <g class="st${it.first ? ' first' : ''}" data-i="${i}">
+        <circle cx="${xs[i]}" cy="120" r="${it.first ? 15 : 13}"/>
+        <text class="nm" x="${xs[i]}" y="${i % 2 ? 196 : 66}" text-anchor="${i === 0 ? 'start' : i === 4 ? 'end' : 'middle'}">${it.name}</text>
+        <text class="mt" x="${xs[i]}" y="${i % 2 ? 222 : 40}" text-anchor="${i === 0 ? 'start' : i === 4 ? 'end' : 'middle'}">${it.meta}</text>
+        ${it.price ? `<text class="pr" x="${xs[i]}" y="${i % 2 ? 248 : 90}" text-anchor="${i === 4 ? 'end' : 'middle'}" dy="${i % 2 ? 0 : 0}">${it.price}</text>` : ''}
+      </g>`).join('');
+    v.innerHTML = items.map(it => `<li><b>${it.name}</b><span>${it.meta}</span>${it.price ? `<i>${it.price}</i>` : ''}</li>`).join('');
+  }
+  drawLine('MXP');
+  document.querySelectorAll('.origin button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.origin button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    drawLine(b.dataset.o);
+    if (!reduced && window.gsap) gsap.from('#stations .st', { autoAlpha: 0, y: 8, duration: .45, stagger: .06, ease: 'power2.out' });
+  }));
+
+  // Destinazioni: schede accessibili da tastiera
+  const tabs = [...document.querySelectorAll('[role=tab]')];
+  function select(t) {
+    tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+    if (!reduced && window.gsap) gsap.from('#' + t.getAttribute('aria-controls') + ' > *', { autoAlpha: 0, y: 10, duration: .5, stagger: .08, ease: 'power2.out' });
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', e => {
+      const k = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (k) { e.preventDefault(); const n = tabs[(i + k + tabs.length) % tabs.length]; n.focus(); select(n); }
+    });
+  });
+
+  if (reduced || !window.gsap) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  tl.from('#phMain', { clipPath: 'inset(100% 0 0 0)', duration: 1.5, ease: 'power3.inOut' }, 0)
+    .from('#phMain img', { scale: 1.15, duration: 2.2 }, 0)
+    .from(GS.splitWords(document.getElementById('h1')), { yPercent: 110, duration: 1.1, stagger: .06 }, .3)
+    .from('.hero [data-intro]', { autoAlpha: 0, y: 22, duration: .9, stagger: .12 }, .7)
+    .from('#phSmall', { autoAlpha: 0, y: 40, duration: 1.1 }, 1.1);
+
+  document.querySelectorAll('h2[data-split]').forEach(h => {
+    gsap.from(GS.splitWords(h), { yPercent: 110, duration: 1, stagger: .05, ease: 'power3.out', scrollTrigger: { trigger: h, start: 'top 85%' } });
+  });
+  gsap.from('[data-reveal]', { clipPath: 'inset(0 0 100% 0)', duration: 1.3, ease: 'power3.inOut', stagger: .15, scrollTrigger: { trigger: '.cars', start: 'top 80%' } });
+  gsap.from('.spec tbody tr', { autoAlpha: 0, y: 14, duration: .6, stagger: .07, scrollTrigger: { trigger: '.spec', start: 'top 85%' } });
+  gsap.from('[data-g]', { autoAlpha: 0, y: 20, duration: .8, stagger: .1, scrollTrigger: { trigger: '.gestures', start: 'top 85%' } });
+
+  // La linea si traccia con lo scorrimento; le fermate compaiono quando la linea le raggiunge
+  if (matchMedia('(min-width: 761px)').matches) {
+    const rail = document.getElementById('rail'), len = rail.getTotalLength();
+    rail.style.strokeDasharray = len; rail.style.strokeDashoffset = len;
+    const st = () => [...document.querySelectorAll('#stations .st')];
+    st().forEach(s => s.style.opacity = 0);
+    const state = { p: 0 };
+    gsap.to(state, { p: 1, ease: 'none', scrollTrigger: { trigger: '.diagram', start: 'top 80%', end: 'bottom 40%', scrub: .5 },
+      onUpdate() {
+        rail.style.strokeDashoffset = len * (1 - state.p);
+        st().forEach((s, i) => { s.style.opacity = state.p >= (xs[i] - 40) / 1120 - .001 ? 1 : 0; s.style.transition = 'opacity .3s'; });
+      } });
+  }
+  addEventListener('load', () => ScrollTrigger.refresh());
+})();
+</script>
+</body>
+</html>

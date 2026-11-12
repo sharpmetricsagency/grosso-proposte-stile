@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grosso · Proposta C · Partenze</title>
+<meta name="robots" content="noindex">
+<!-- Mockup indicativo. Immagini generate con Higgsfield (GPT Image 2.6) solo per l'atmosfera: nel sito vero foto reali. Prezzi, tempi e voli di esempio. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/p-hero-arrivi-1200.webp">
+<link rel="stylesheet" href="assets/chip.css?v=3">
+<style>
+:root {
+  --paper: #f1f0ec; --paper-2: #e7e5df; --white: #fbfaf8; --ink: #121314; --ink-2: #3c3f43; --muted: #6a6d72;
+  --graphite: #0f1012; --panel: #17181b; --tile: #202226; --d-text: #ecebe7; --d-muted: rgba(236, 235, 231, .58);
+  --line: rgba(18, 19, 20, .12); --line-2: rgba(18, 19, 20, .24); --d-line: rgba(236, 235, 231, .12); --d-line-2: rgba(236, 235, 231, .22);
+  --amber: #f2a900; --amber-ink: #1d1600; --amber-soft: rgba(242, 169, 0, .14); --ok: #3fbf7f;
+  --sans: 'Geist', system-ui, sans-serif; --mono: 'Geist Mono', ui-monospace, monospace;
+  --pad: clamp(16px, 3vw, 40px); --ease: cubic-bezier(.2, .7, .1, 1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.55 var(--sans); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+button, input, select { font: inherit; color: inherit; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .06em; margin-bottom: -.06em; }
+.w > span { display: inline-block; }
+.mono { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
+.h { font-weight: 500; letter-spacing: -.035em; line-height: .98; margin: 0; }
+.h em { font-style: normal; color: var(--muted); }
+.dark .h em { color: var(--d-muted); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 20px; border: 0; border-radius: 4px; background: var(--amber); color: var(--amber-ink); font-weight: 600; font-size: 15px; text-decoration: none; cursor: pointer; transition: filter .2s, transform .2s var(--ease); }
+.btn:hover { filter: brightness(1.06); }
+.btn:active { transform: translateY(1px); }
+.btn.ink { background: var(--ink); color: var(--white); }
+.btn.out { background: transparent; color: inherit; box-shadow: inset 0 0 0 1px currentColor; }
+.tag { display: inline-block; padding: 2px 7px; border: 1px solid currentColor; border-radius: 3px; font: 500 10.5px var(--mono); letter-spacing: .08em; text-transform: uppercase; opacity: .7; vertical-align: middle; }
+
+/* Barra tecnica */
+.rail { background: var(--graphite); color: var(--d-muted); border-bottom: 1px solid var(--d-line); }
+.rail .in { display: flex; justify-content: space-between; gap: 20px; align-items: center; height: 34px; padding: 0 var(--pad); overflow: hidden; white-space: nowrap; }
+.rail b { color: var(--d-text); font-weight: 500; }
+.rail .on::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); margin-right: 8px; }
+@media (max-width: 800px) { .rail .coords { display: none; } }
+
+/* Testata */
+.head { position: sticky; top: 0; z-index: 40; background: rgba(241, 240, 236, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.head .in { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 68px; padding: 0 var(--pad); }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand b { font-weight: 650; font-size: 22px; letter-spacing: -.02em; }
+.brand b i { display: inline-block; width: 9px; height: 9px; background: var(--amber); margin-left: 3px; vertical-align: 1px; font-style: normal; }
+.brand span { padding-left: 12px; border-left: 1px solid var(--line-2); color: var(--muted); }
+.head nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; font-size: 14.5px; }
+.head nav a { text-decoration: none; color: var(--ink-2); }
+.head nav a:hover { color: var(--ink); }
+.head .right { display: flex; align-items: center; gap: 18px; }
+.head .btn { min-height: 40px; }
+@media (max-width: 900px) { .head nav, .head .lang, .brand span { display: none; } }
+
+/* Hero diviso */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: calc(100svh - 102px); border-bottom: 1px solid var(--line); }
+.pane-l { position: relative; padding: clamp(32px, 5vw, 72px) var(--pad) clamp(32px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; }
+.pane-l::before, .pane-l::after { content: ""; position: absolute; width: 10px; height: 10px; border: 1px solid var(--line-2); }
+.pane-l::before { top: 16px; left: 16px; border-right: 0; border-bottom: 0; }
+.pane-l::after { bottom: 16px; right: 16px; border-left: 0; border-top: 0; }
+.idx { display: flex; justify-content: space-between; color: var(--muted); margin-bottom: 26px; }
+.hero h1 { font-size: clamp(46px, 5.4vw, 88px); max-width: 11ch; }
+.hero .sub { max-width: 46ch; color: var(--ink-2); font-size: clamp(16px, 1.2vw, 18px); margin: 22px 0 30px; }
+
+.ticket { background: var(--white); border: 1px solid var(--line-2); border-radius: 6px; box-shadow: 0 1px 0 rgba(0,0,0,.03), 0 20px 50px -30px rgba(18,19,20,.35); }
+.ticket form { display: grid; grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr); }
+.tf { padding: 12px 16px 10px; border-bottom: 1px solid var(--line); }
+.tf label { display: block; font: 500 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.tf select, .tf input { width: 100%; border: 0; background: none; padding: 3px 0 0; font-size: 17px; font-weight: 500; appearance: none; -webkit-appearance: none; cursor: pointer; }
+.tf select:focus, .tf input:focus { outline: none; }
+.tf:focus-within { background: var(--paper); }
+.swap { display: grid; place-items: center; border-bottom: 1px solid var(--line); border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
+.swap button { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line-2); background: var(--white); cursor: pointer; display: grid; place-items: center; transition: transform .3s var(--ease); }
+.swap button:hover { transform: rotate(180deg); }
+.swap svg { width: 16px; height: 16px; }
+.row2 { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr .8fr .8fr; }
+.row2 .tf + .tf { border-left: 1px solid var(--line); }
+.tgo { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 12px 12px 16px; }
+.tgo small { color: var(--muted); font-size: 13px; }
+.res { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s var(--ease); }
+.res.open { grid-template-rows: 1fr; }
+.res > div { overflow: hidden; }
+.res-h { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 12px 16px; border-top: 1px dashed var(--line-2); color: var(--muted); }
+.res-h b { color: var(--ink); }
+.opts { list-style: none; margin: 0; padding: 0 8px 8px; }
+.opt { display: grid; grid-template-columns: minmax(0, 1fr) auto auto auto; gap: 16px; align-items: center; padding: 11px 8px; border-radius: 4px; }
+.opt:hover { background: var(--paper); }
+.opt h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.opt .cap { color: var(--muted); }
+.opt .p { font-size: 22px; font-weight: 600; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.opt button { min-height: 36px; padding: 0 14px; border-radius: 4px; border: 1px solid var(--line-2); background: var(--white); font-size: 13px; font-weight: 600; cursor: pointer; }
+.opt button:hover { border-color: var(--ink); }
+.opt[aria-disabled="true"] { opacity: .4; }
+.opt.sent button { background: var(--ink); color: var(--white); border-color: var(--ink); }
+@media (max-width: 520px) { .opt { grid-template-columns: minmax(0, 1fr) auto; } .opt .cap { grid-column: 1; } .opt button { grid-column: 2; grid-row: 1 / 3; } .opt .p { grid-row: 2; grid-column: 1; } .row2 { grid-template-columns: 1fr 1fr; } .row2 .tf:first-child { grid-column: 1 / -1; } .row2 .tf:nth-child(2) { border-left: 0; } .tgo { flex-direction: column; align-items: stretch; } }
+
+.pane-r { position: relative; background: var(--graphite); color: var(--d-text); padding: 16px; display: flex; }
+.frame { position: relative; flex: 1; overflow: hidden; border-radius: 4px; min-height: 460px; }
+.frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,16,18,.55), transparent 24%, transparent 62%, rgba(15,16,18,.85)); }
+.corner { position: absolute; z-index: 2; width: 14px; height: 14px; border: 1.5px solid var(--amber); }
+.corner.tl { top: 14px; left: 14px; border-right: 0; border-bottom: 0; } .corner.tr { top: 14px; right: 14px; border-left: 0; border-bottom: 0; }
+.corner.bl { bottom: 14px; left: 14px; border-right: 0; border-top: 0; } .corner.br { bottom: 14px; right: 14px; border-left: 0; border-top: 0; }
+.ov { position: absolute; z-index: 2; left: 36px; right: 36px; display: flex; justify-content: space-between; gap: 12px; color: var(--d-muted); }
+.ov.t { top: 22px; }
+.ov.b { bottom: 26px; flex-direction: column; gap: 10px; }
+.status { display: flex; align-items: center; gap: 12px; font: 500 13px var(--mono); color: var(--d-text); background: rgba(15,16,18,.72); border: 1px solid var(--d-line-2); border-radius: 4px; padding: 12px 14px; backdrop-filter: blur(6px); min-height: 46px; }
+.status i { flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 0 4px var(--amber-soft); }
+.status span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 960px) { .split { grid-template-columns: minmax(0, 1fr); min-height: 0; } .pane-r { order: -1; padding: 10px; } .frame { min-height: 0; aspect-ratio: 4 / 3.4; } .ov { left: 24px; right: 24px; } }
+@media (max-width: 520px) { .ov.t span:last-child, .ov.b > .mono { display: none; } .ov.b { bottom: 20px; } .status { font-size: 12px; } }
+
+/* Sezioni */
+.sec { padding: clamp(80px, 10vw, 140px) 0; }
+.in { padding: 0 var(--pad); max-width: 1440px; margin: 0 auto; }
+.sec-h { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: end; margin-bottom: clamp(36px, 5vw, 64px); }
+.sec-h h2 { font-size: clamp(40px, 4.6vw, 72px); }
+.sec-h p { margin: 0; color: var(--ink-2); max-width: 46ch; font-size: 17px; }
+.dark { background: var(--graphite); color: var(--d-text); }
+.dark .sec-h p { color: var(--d-muted); }
+.kick { display: flex; gap: 14px; color: var(--muted); margin-bottom: 18px; }
+.dark .kick { color: var(--d-muted); }
+.kick b { color: var(--amber); font-weight: 500; }
+@media (max-width: 820px) { .sec-h { grid-template-columns: minmax(0, 1fr); gap: 16px; } }
+
+/* Tabellone */
+.board-tabs { display: flex; gap: 6px; margin-bottom: 18px; flex-wrap: wrap; }
+.board-tabs button { min-height: 38px; padding: 0 14px; border-radius: 4px; border: 1px solid var(--d-line-2); background: none; color: var(--d-muted); font: 500 12px var(--mono); letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+.board-tabs button[aria-pressed="true"] { background: var(--amber); border-color: var(--amber); color: var(--amber-ink); }
+.board { background: var(--panel); border: 1px solid var(--d-line); border-radius: 6px; padding: 8px clamp(8px, 2vw, 20px) 14px; overflow-x: auto; }
+.board table { width: 100%; border-collapse: collapse; min-width: 640px; }
+.board th { text-align: left; font: 500 11px var(--mono); letter-spacing: .1em; color: var(--d-muted); padding: 12px 8px; border-bottom: 1px solid var(--d-line); white-space: nowrap; }
+.board td { padding: 9px 8px; border-bottom: 1px solid rgba(236,235,231,.06); white-space: nowrap; vertical-align: middle; }
+.board tr:last-child td { border-bottom: 0; }
+.flap { display: inline-flex; gap: 2px; }
+.flap span { position: relative; display: inline-grid; place-items: center; width: 1.05em; height: 1.5em; background: var(--tile); border-radius: 2px; font: 500 clamp(13px, 1.25vw, 17px) var(--mono); color: var(--d-text); }
+.flap span::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(0,0,0,.55); }
+.flap.amber span { color: var(--amber); }
+.board .go { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 12px; border-radius: 4px; border: 1px solid var(--d-line-2); color: var(--d-text); font: 500 12px var(--mono); letter-spacing: .06em; text-transform: uppercase; text-decoration: none; }
+.board .go:hover { border-color: var(--amber); color: var(--amber); }
+.board-foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 14px; color: var(--d-muted); }
+@media (max-width: 700px) { .board .c-car, .board .c-time { display: none; } .board table { min-width: 0; } .flap span { width: .95em; } }
+
+/* Come funziona */
+.how { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 5vw, 96px); }
+.how .sticky { position: sticky; top: 110px; align-self: start; }
+.how h2 { font-size: clamp(40px, 4.4vw, 68px); }
+.steps { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-2); }
+.steps li { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.steps .n { font: 500 13px var(--mono); color: var(--muted); }
+.steps h3 { margin: 0 0 6px; font-size: clamp(22px, 2vw, 28px); font-weight: 500; letter-spacing: -.02em; }
+.steps p { margin: 0; color: var(--ink-2); }
+.steps .t { font: 500 12px var(--mono); color: var(--ink); background: var(--paper-2); padding: 5px 8px; border-radius: 3px; white-space: nowrap; }
+@media (max-width: 820px) { .how { grid-template-columns: minmax(0, 1fr); } .how .sticky { position: static; } .steps li { grid-template-columns: 40px minmax(0, 1fr); } .steps .t { grid-column: 2; justify-self: start; } }
+
+/* Flotta */
+.fleet { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); border: 1px solid var(--line-2); border-radius: 6px; overflow: hidden; background: var(--white); }
+.fleet .stage { position: relative; background: var(--graphite); min-height: 420px; }
+.fleet .stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .5s var(--ease); }
+.fleet .stage .mono { position: absolute; left: 16px; top: 14px; color: var(--d-muted); z-index: 1; }
+.fleet .list { display: flex; flex-direction: column; }
+.car { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; width: 100%; text-align: left; padding: 20px 22px; border: 0; border-bottom: 1px solid var(--line); background: none; cursor: pointer; transition: background .2s; }
+.car:last-child { border-bottom: 0; }
+.car b { font-size: 22px; font-weight: 500; letter-spacing: -.02em; }
+.car .mono { color: var(--muted); align-self: center; }
+.car .specs { grid-column: 1 / -1; display: none; gap: 18px; flex-wrap: wrap; margin-top: 10px; color: var(--ink-2); font-size: 14px; }
+.car[aria-pressed="true"] { background: var(--paper); box-shadow: inset 3px 0 var(--amber); }
+.car[aria-pressed="true"] .specs { display: flex; }
+.specs span { font: 500 12px var(--mono); background: var(--paper-2); padding: 5px 8px; border-radius: 3px; }
+@media (max-width: 860px) { .fleet { grid-template-columns: minmax(0, 1fr); } .fleet .stage { min-height: 0; aspect-ratio: 3 / 2; } }
+
+/* Copertura */
+.cover { position: relative; min-height: 78svh; display: flex; align-items: flex-end; overflow: hidden; color: var(--d-text); }
+.cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,16,18,.2), rgba(15,16,18,.1) 40%, rgba(15,16,18,.86)); }
+.cover .in { position: relative; z-index: 1; width: 100%; padding-bottom: clamp(32px, 5vw, 64px); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; }
+.cover h2 { font-size: clamp(40px, 5vw, 80px); max-width: 14ch; }
+.regions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 22px; }
+.regions span { font: 500 12px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 6px 9px; border: 1px solid var(--d-line-2); border-radius: 3px; background: rgba(15,16,18,.4); }
+.coord { text-align: right; color: var(--d-muted); line-height: 1.8; }
+@media (max-width: 760px) { .cover .in { grid-template-columns: minmax(0, 1fr); } .coord { text-align: left; } }
+
+/* Fiducia */
+.trust { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 1px solid var(--line-2); border-radius: 6px; overflow: hidden; }
+.trust > div { padding: clamp(24px, 4vw, 48px); }
+.trust > div + div { border-left: 1px solid var(--line-2); background: var(--white); }
+.trust h2 { font-size: clamp(32px, 3.4vw, 50px); }
+.trust table { width: 100%; border-collapse: collapse; margin-top: 26px; font-size: 15px; }
+.trust th { text-align: left; font: 500 11.5px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 12px 16px 12px 0; border-top: 1px solid var(--line); vertical-align: top; width: 38%; }
+.trust td { padding: 11px 0; border-top: 1px solid var(--line); }
+.todo { color: #a36a00; font-family: var(--mono); font-size: 13px; }
+.rv-ph { border: 1px dashed var(--line-2); border-radius: 4px; padding: 22px; margin: 22px 0; color: var(--ink-2); }
+.rv-ph .score { font-size: 56px; font-weight: 500; letter-spacing: -.04em; color: var(--line-2); line-height: 1; }
+@media (max-width: 860px) { .trust { grid-template-columns: minmax(0, 1fr); } .trust > div + div { border-left: 0; border-top: 1px solid var(--line-2); } }
+
+/* Chiusura */
+.final .in { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: end; }
+.final h2 { font-size: clamp(46px, 6.4vw, 104px); }
+.final .ctas { display: flex; gap: 10px; flex-wrap: wrap; }
+@media (max-width: 860px) { .final .in { grid-template-columns: minmax(0, 1fr); } }
+
+footer { background: var(--graphite); color: var(--d-muted); border-top: 1px solid var(--d-line); padding: 48px 0 28px; font-size: 14px; }
+footer .cols { display: grid; grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr)); gap: 28px; }
+footer h4 { margin: 0 0 12px; font: 500 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: rgba(236,235,231,.4); }
+footer p { margin: 0 0 6px; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--amber); }
+footer .brand b { color: var(--d-text); }
+footer .legal { margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--d-line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 760px) { footer .cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+
+.wa { position: fixed; right: 16px; bottom: 16px; z-index: 40; width: 52px; height: 52px; display: grid; place-items: center; border-radius: 8px; background: var(--ink); color: var(--white); box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+.wa svg { width: 24px; height: 24px; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+.reduced *, .reduced *::before, .reduced *::after { animation: none !important; transition: none !important; }
+</style>
+</head>
+<body>
+
+<div class="rail mono"><div class="in">
+  <span class="coords">MXP 45.63°N 8.72°E · LIN 45.45°N 9.28°E · BGY 45.67°N 9.70°E</span>
+  <span>Milano <b id="clock">17:42</b> · <span class="on">Drivers on duty 24/7</span></span>
+</div></div>
+<header class="head"><div class="in">
+  <a class="brand" href="#top" aria-label="Grosso, chauffeur services, home"><b>Grosso<i aria-hidden="true"></i></b><span class="mono">Chauffeur services</span></a>
+  <nav aria-label="Main"><ul><li><a href="#board">Routes &amp; prices</a></li><li><a href="#how">How it works</a></li><li><a href="#fleet">Fleet</a></li><li><a href="#company">Company</a></li></ul></nav>
+  <div class="right"><span class="lang mono">EN / IT</span><a class="btn" href="#book">Book now</a></div>
+</div></header>
+
+<main id="top">
+  <section class="split hero" aria-labelledby="h1">
+    <div class="pane-l">
+      <div class="idx mono" data-intro><span>Private transfers · Milan airports</span><span>01 / Book</span></div>
+      <h1 class="h" id="h1" data-split>Next departure: the moment you <em>land.</em></h1>
+      <p class="sub" data-intro>Fixed-price Mercedes transfers from Malpensa, Linate and Bergamo to Lake Como, Switzerland and the Riviera. Price in ten seconds, a person confirms in minutes, your flight is tracked.</p>
+      <div class="ticket" id="book" data-intro>
+        <form id="bookForm" novalidate>
+          <div class="tf"><label for="from">From</label><select id="from"></select></div>
+          <div class="swap"><button type="button" id="swap" aria-label="Swap origin and destination" disabled title="Return trips in the full version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 7h12m0 0-4-4m4 4-4 4M17 17H5m0 0 4 4m-4-4 4-4"/></svg></button></div>
+          <div class="tf"><label for="to">To</label><select id="to"></select></div>
+          <div class="row2">
+            <div class="tf"><label for="date">Date</label><input id="date" type="date"></div>
+            <div class="tf"><label for="time">Time</label><input id="time" type="time" value="10:30"></div>
+            <div class="tf"><label for="pax">Passengers</label><select id="pax"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
+          </div>
+          <div class="tgo"><small>Tolls, fuel, parking and 60 min waiting included.</small><button class="btn" type="submit">Get fixed price</button></div>
+        </form>
+        <div class="res" id="results" aria-live="polite"><div>
+          <div class="res-h mono"><span><b id="resTitle">MXP → Bellagio</b> · <span id="resDur">1 h 35</span></span><span class="tag">Example prices</span></div>
+          <ul class="opts" id="options"></ul>
+        </div></div>
+      </div>
+    </div>
+    <div class="pane-r">
+      <div class="frame" id="frame">
+        <img src="img/p-hero-arrivi-1200.webp" srcset="img/p-hero-arrivi-800.webp 800w, img/p-hero-arrivi-1200.webp 1200w" sizes="(max-width: 960px) 100vw, 50vw" alt="Indicative image: a black van waiting at a modern airport arrivals curb at dawn" fetchpriority="high">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="ov t mono"><span>Arrivals · Terminal 1 · MXP</span><span>Indicative image</span></div>
+        <div class="ov b">
+          <span class="mono">Live flight tracking <span class="tag">Example</span></span>
+          <div class="status" aria-live="off"><i></i><span id="status">AA 198 JFK → MXP · Landed 08:12 · Driver at gate B</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark sec" id="board" aria-labelledby="boardH">
+    <div class="in">
+      <div class="sec-h">
+        <div><p class="kick mono"><b>02</b><span>Departures</span></p><h2 class="h" id="boardH" data-split>Every route, <em>every price, on one board.</em></h2></div>
+        <p>No quote requests, no waiting for an email. The price you see is the price you pay, for the whole car, door to door.</p>
+      </div>
+      <div class="board-tabs" role="group" aria-label="Route group">
+        <button type="button" data-g="air" aria-pressed="true">From airports</button>
+        <button type="button" data-g="city" aria-pressed="false">From Milan</button>
+        <button type="button" data-g="far" aria-pressed="false">Switzerland &amp; Riviera</button>
+      </div>
+      <div class="board">
+        <table>
+          <caption class="sr-only">Routes with travel time, car and fixed price</caption>
+          <thead><tr><th scope="col">From</th><th scope="col">To</th><th scope="col" class="c-time">Time</th><th scope="col" class="c-car">Car</th><th scope="col">Price</th><th scope="col"><span class="sr-only">Book</span></th></tr></thead>
+          <tbody id="boardBody"></tbody>
+        </table>
+      </div>
+      <div class="board-foot mono"><span>E-Class, up to 3 passengers · V-Class +15% · S-Class +45%</span><span class="tag">Example prices</span></div>
+    </div>
+  </section>
+
+  <section class="sec" id="how" aria-labelledby="howH">
+    <div class="in how">
+      <div class="sticky"><p class="kick mono"><b>03</b><span>How it works</span></p><h2 class="h" id="howH" data-split>Four steps, <em>no surprises.</em></h2></div>
+      <ol class="steps">
+        <li data-step><span class="n">01</span><div><h3>Fixed price in ten seconds</h3><p>Route, date, passengers. You see every car that fits, with its price. No meter, no quote by email.</p></div><span class="t">~ 10 s</span></li>
+        <li data-step><span class="n">02</span><div><h3>A person confirms</h3><p>Federico or the office checks the ride and confirms it by email and WhatsApp, with the driver's name.</p></div><span class="t">&lt; 15 min</span></li>
+        <li data-step><span class="n">03</span><div><h3>Charged only when confirmed</h3><p>Card, Apple Pay or Google Pay: the amount is held, not charged, until a person confirms your ride. Free cancellation up to 24 hours before.</p></div><span class="t">Stripe</span></li>
+        <li data-step><span class="n">04</span><div><h3>Your flight, tracked</h3><p>If you land early or late, the pickup moves with you. The first hour of waiting is included.</p></div><span class="t">60 min</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="fleet" aria-labelledby="fleetH" style="padding-top:0">
+    <div class="in">
+      <div class="sec-h"><div><p class="kick mono"><b>04</b><span>Fleet</span></p><h2 class="h" id="fleetH" data-split>Pick by seats <em>and suitcases.</em></h2></div><p>Four Mercedes, black, with Wi-Fi, water and chargers. Child seats free on request.</p></div>
+      <div class="fleet">
+        <div class="stage"><span class="mono">Indicative image</span>
+          <img id="carImg" src="img/f-berlina-1600.webp" alt="Indicative image of a black sedan" loading="lazy">
+        </div>
+        <div class="list" role="group" aria-label="Choose a car">
+          <button class="car" type="button" aria-pressed="true" data-img="f-berlina"><b>E-Class</b><span class="mono">Business</span><span class="specs"><span>3 pax</span><span>2 bags</span><span>Couples, business</span></span></button>
+          <button class="car" type="button" aria-pressed="false" data-img="f-berlina"><b>S-Class</b><span class="mono">First</span><span class="specs"><span>3 pax</span><span>2 bags</span><span>Events, executives</span></span></button>
+          <button class="car" type="button" aria-pressed="false" data-img="f-van"><b>V-Class</b><span class="mono">Executive van</span><span class="specs"><span>7 pax</span><span>6 bags</span><span>Families, small groups</span></span></button>
+          <button class="car" type="button" aria-pressed="false" data-img="f-van"><b>Vito</b><span class="mono">Group</span><span class="specs"><span>8 pax</span><span>6 bags</span><span>Groups, golf, ski</span></span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cover" aria-labelledby="coverH">
+    <img src="img/p-alpi-aereo-1600.webp" srcset="img/p-alpi-aereo-800.webp 800w, img/p-alpi-aereo-1600.webp 1600w, img/p-alpi-aereo-2400.webp 2400w" sizes="100vw" alt="Indicative image: aerial view of a black car on a mountain road above an alpine lake" loading="lazy">
+    <div class="in">
+      <div><p class="kick mono" style="color:var(--d-muted)"><b>05</b><span>Coverage</span></p><h2 class="h" id="coverH" data-split>From the lakes to the Alps <em>and the sea.</em></h2>
+        <div class="regions"><span>Lombardia</span><span>Piemonte</span><span>Liguria</span><span>Veneto</span><span>Ticino CH</span><span>Graubünden CH</span></div></div>
+      <div class="coord mono">Base · Bariano (BG)<br>45.51°N 9.70°E</div>
+    </div>
+  </section>
+
+  <section class="sec" id="company" aria-labelledby="coH">
+    <div class="in">
+      <div class="trust">
+        <div>
+          <p class="kick mono"><b>06</b><span>Company</span></p>
+          <h2 class="h" id="coH" data-split>A licensed company, <em>with a name and an address.</em></h2>
+          <table>
+            <tr><th scope="row">Operator</th><td>Grosso Service di Federico Grosso</td></tr>
+            <tr><th scope="row">NCC licence</th><td><span class="todo">[no. and municipality to be added]</span></td></tr>
+            <tr><th scope="row">VAT</th><td>IT13224830961</td></tr>
+            <tr><th scope="row">Base</th><td>Via Piemonte 18, 24050 Bariano (BG)</td></tr>
+            <tr><th scope="row">Languages</th><td>English, Italian <span class="todo">[to be confirmed]</span></td></tr>
+          </table>
+        </div>
+        <div>
+          <p class="kick mono"><span>Reviews</span><span class="tag">Placeholder</span></p>
+          <div class="rv-ph"><div class="score">—.—</div><p>Google rating and latest reviews, pulled live from Grosso's profile and linked to the source. Only verifiable reviews are shown.</p></div>
+          <a class="btn out" href="#book">See all reviews</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark sec final" aria-labelledby="finalH">
+    <div class="in">
+      <h2 class="h" id="finalH" data-split>Land. Walk out. <em>Drive off.</em></h2>
+      <div class="ctas"><a class="btn" href="#book">Get fixed price</a><a class="btn out" href="https://wa.me/393338675746">WhatsApp</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="in">
+    <div class="cols">
+      <div><a class="brand" href="#top"><b>Grosso<i aria-hidden="true" style="display:inline-block;width:9px;height:9px;background:var(--amber);margin-left:3px"></i></b></a><p style="margin-top:14px;max-width:34ch">Private chauffeur services from Milan's airports. Every day, 24 hours.</p></div>
+      <div><h4>Airports</h4><p><a href="#board">Malpensa MXP</a></p><p><a href="#board">Linate LIN</a></p><p><a href="#board">Bergamo BGY</a></p></div>
+      <div><h4>Contact</h4><p><a href="https://wa.me/393338675746">WhatsApp</a></p><p><a href="tel:+393338675746">+39 333 867 5746</a></p></div>
+      <div><h4>Company</h4><p>Via Piemonte 18, Bariano (BG)</p><p>VAT IT13224830961</p></div>
+    </div>
+    <div class="legal mono"><span>© Grosso Service · NCC licence [to be added]</span><span>Privacy · Cookies · Terms</span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/393338675746" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+
+<script src="assets/demo.js?v=4"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  const { reduced } = GS;
+  GS.presenterChip('c');
+  GS.milanClock(t => { document.getElementById('clock').textContent = t; });
+
+  // Biglietto di prenotazione (demo)
+  const f = document.getElementById('bookForm');
+  GS.fillSelect(f.from, GS.ORIGINS, 'MXP');
+  GS.fillSelect(f.to, GS.DESTINATIONS, 'BELLAGIO');
+  const d = new Date(); d.setDate(d.getDate() + 14); f.date.value = d.toISOString().slice(0, 10);
+  const results = document.getElementById('results');
+  function render() {
+    const q = GS.quote(f.from.value, f.to.value, f.pax.value);
+    document.getElementById('resTitle').textContent = `${q.from.code} → ${q.to.label}`;
+    document.getElementById('resDur').textContent = GS.duration(q.minutes);
+    document.getElementById('options').innerHTML = q.options.map(o => `
+      <li class="opt" aria-disabled="${!o.fits}"><h3>${o.name}</h3><span class="cap mono">${o.seats} pax · ${o.bags} bags</span><span class="p">${GS.euro(o.price)}</span>
+      <button type="button" ${o.fits ? '' : 'disabled'}>${o.fits ? 'Select' : 'Too small'}</button></li>`).join('');
+    results.classList.add('open');
+  }
+  f.addEventListener('submit', e => { e.preventDefault(); render(); });
+  f.addEventListener('change', () => { if (results.classList.contains('open')) render(); });
+  document.getElementById('options').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b || b.disabled) return;
+    b.closest('.opt').classList.add('sent'); b.textContent = 'Sent ✓';
+  });
+
+  // Stato del volo: esempi a rotazione
+  const STATUSES = ['AA 198 JFK → MXP · Landed 08:12 · Driver at gate B', 'EK 205 DXB → MXP · On time 13:10 · Driver on the way', 'QR 127 DOH → MXP · Delayed +25 min · Pickup moved to 14:05', 'BA 572 LHR → LIN · Landed 11:48 · Driver at arrivals hall'];
+  const st = document.getElementById('status');
+  if (!reduced) { let i = 0; setInterval(() => { if (document.hidden) return; i = (i + 1) % STATUSES.length; st.style.opacity = 0; setTimeout(() => { st.textContent = STATUSES[i]; st.style.opacity = 1; }, 300); }, 4200); st.style.transition = 'opacity .3s'; }
+
+  // Tabellone a palette
+  const GROUPS = {
+    air: [['MXP', 'COMO'], ['MXP', 'BELLAGIO'], ['LIN', 'VARENNA'], ['BGY', 'TREMEZZO'], ['LIN', 'COMO'], ['BGY', 'BELLAGIO']],
+    city: [['MIL', 'COMO'], ['MIL', 'BELLAGIO'], ['MIL', 'VARENNA'], ['MIL', 'TREMEZZO'], ['MIL', 'LUGANO'], ['MIL', 'PORTOFINO']],
+    far: [['MIL', 'LUGANO'], ['MXP', 'LUGANO'], ['MXP', 'STMORITZ'], ['LIN', 'STMORITZ'], ['MIL', 'PORTOFINO'], ['MXP', 'PORTOFINO']],
+  };
+  const body = document.getElementById('boardBody');
+  const pad = (s, n) => s.padEnd(n, ' ');
+  const flapHTML = (text, cls = '') => `<span class="sr-only">${text.trim()}</span><span class="flap ${cls}" aria-hidden="true" data-t="${text}">${[...text].map(c => `<span>${c === ' ' ? '&nbsp;' : c}</span>`).join('')}</span>`;
+  function fillBoard(g) {
+    body.innerHTML = GROUPS[g].map(([o, t]) => {
+      const q = GS.quote(o, t, 1); const e = q.options[0];
+      const dur = `${Math.floor(q.minutes / 60)}:${String(q.minutes % 60).padStart(2, '0')}`;
+      return `<tr><td>${flapHTML(pad(o, 3))}</td><td>${flapHTML(pad(q.to.label.toUpperCase(), 10))}</td><td class="c-time">${flapHTML(dur.padStart(4, ' '))}</td><td class="c-car">${flapHTML('E-CLASS')}</td><td>${flapHTML(('€' + e.price).padStart(4, ' '), 'amber')}</td><td><a class="go" href="#book" data-o="${o}" data-t="${t}">Book →</a></td></tr>`;
+    }).join('');
+  }
+  const CHARS = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:€-.';
+  function flip() {
+    if (reduced || document.hidden) return;
+    const tiles = [...body.querySelectorAll('.flap span')];
+    const finals = tiles.map(s => s.textContent);
+    const start = performance.now();
+    const delays = tiles.map((_, i) => 120 + (i % 14) * 38 + Math.random() * 260);
+    (function step(now) {
+      let busy = false;
+      tiles.forEach((s, i) => {
+        const t = now - start;
+        if (t < delays[i] + 420) { busy = true; s.textContent = CHARS[(Math.random() * CHARS.length) | 0]; }
+        else if (s.textContent !== finals[i]) s.textContent = finals[i];
+      });
+      if (busy) requestAnimationFrame(step);
+    })(start);
+  }
+  fillBoard('air');
+  document.querySelectorAll('.board-tabs button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.board-tabs button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    fillBoard(b.dataset.g); flip();
+  }));
+  body.addEventListener('click', e => {
+    const a = e.target.closest('.go'); if (!a) return;
+    f.from.value = a.dataset.o; f.to.value = a.dataset.t; setTimeout(render, 300);
+  });
+  let flipped = false;
+  new IntersectionObserver(([en]) => { if (en.isIntersecting && !flipped) { flipped = true; flip(); } }, { threshold: .4 }).observe(document.querySelector('.board'));
+
+  // Flotta
+  const carImg = document.getElementById('carImg');
+  document.querySelectorAll('.car').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.car').forEach(x => x.setAttribute('aria-pressed', x === b));
+    const src = `img/${b.dataset.img}-1600.webp`;
+    if (!carImg.src.endsWith(src)) { carImg.style.opacity = 0; setTimeout(() => { carImg.src = src; carImg.style.opacity = 1; }, 250); }
+  }));
+
+  if (reduced || !window.gsap) return;
+  gsap.registerPlugin(ScrollTrigger);
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  tl.from('#frame', { clipPath: 'inset(0 0 0 100%)', duration: 1.4, ease: 'power4.inOut' }, 0)
+    .from('#frame img', { scale: 1.12, duration: 2 }, 0)
+    .from('.corner', { autoAlpha: 0, scale: .4, duration: .5, stagger: .06 }, .9)
+    .from(GS.splitWords(document.getElementById('h1')), { yPercent: 110, duration: 1, stagger: .06 }, .25)
+    .from('.hero [data-intro]', { autoAlpha: 0, y: 20, duration: .8, stagger: .1 }, .6)
+    .from('.ov', { autoAlpha: 0, y: 10, duration: .6, stagger: .1 }, 1.2);
+  document.querySelectorAll('h2[data-split]').forEach(h => {
+    gsap.from(GS.splitWords(h), { yPercent: 110, duration: .9, stagger: .05, ease: 'power3.out', scrollTrigger: { trigger: h, start: 'top 85%' } });
+  });
+  gsap.from('[data-step]', { autoAlpha: 0, x: 24, duration: .7, stagger: .1, scrollTrigger: { trigger: '.steps', start: 'top 80%' } });
+  gsap.from('.fleet', { autoAlpha: 0, y: 30, duration: .9, scrollTrigger: { trigger: '.fleet', start: 'top 85%' } });
+  gsap.fromTo('.cover img', { scale: 1.12 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: '.cover', start: 'top bottom', end: 'bottom top', scrub: true } });
+  addEventListener('load', () => ScrollTrigger.refresh());
+})();
+</script>
+</body>
+</html>

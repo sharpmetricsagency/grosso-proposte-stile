@@ -1,0 +1,8 @@
+/* Etichetta di presentazione dei mockup: non fa parte del design proposto */
+.gs-chip { position: fixed; right: 12px; top: 132px; z-index: 9999; opacity: .9; display: flex; align-items: center; gap: 2px; max-width: calc(100vw - 24px); overflow-x: auto; padding: 4px; border-radius: 999px; background: rgba(18, 18, 18, .88); color: #f4f1ea; font: 500 12px/1 system-ui, sans-serif; box-shadow: 0 6px 24px rgba(0, 0, 0, .25); }
+.gs-chip a, .gs-chip span, .gs-chip button { flex: none; padding: 8px 11px; border-radius: 999px; color: inherit; text-decoration: none; white-space: nowrap; }
+.gs-chip a:hover, .gs-chip a:focus-visible { background: rgba(255, 255, 255, .12); outline: none; }
+.gs-chip [aria-current] { background: #f4f1ea; color: #121212; }
+.gs-chip button { border: 0; background: none; font: inherit; font-size: 15px; cursor: pointer; opacity: .7; }
+@media (max-width: 700px) { .gs-chip { top: auto; right: auto; left: 12px; bottom: 12px; max-width: calc(100vw - 92px); } }
+@media print { .gs-chip { display: none; } }

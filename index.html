@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grosso Service · Proposte di stile</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,400&family=Libre+Caslon+Display&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f3ef; --card: #fbfaf7; --ink: #151514; --ink-2: #4a4945; --muted: #77756f; --line: rgba(21, 21, 20, .12);
+  --sans: 'Geist', system-ui, sans-serif; --pad: clamp(16px, 4vw, 56px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 var(--pad); }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+header { padding: clamp(48px, 7vw, 96px) 0 clamp(32px, 4vw, 56px); }
+.eyebrow { font-size: 13px; color: var(--muted); margin: 0 0 18px; }
+h1 { font-weight: 500; font-size: clamp(40px, 5.6vw, 80px); line-height: 1; letter-spacing: -.035em; margin: 0 0 24px; max-width: 16ch; }
+.intro { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.intro p { margin: 0; font-size: 18px; color: var(--ink-2); max-width: 52ch; }
+.note { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; font-size: 14.5px; color: var(--ink-2); }
+.note b { color: var(--ink); }
+.note ul { margin: 8px 0 0; padding-left: 18px; }
+.note li { margin: 4px 0; }
+@media (max-width: 860px) { .intro { grid-template-columns: minmax(0, 1fr); } }
+
+.jump { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 28px; }
+.jump a { padding: 9px 14px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; font-size: 14px; background: var(--card); }
+.jump a:hover { border-color: var(--ink); }
+
+.prop { padding: clamp(40px, 6vw, 72px) 0; border-top: 1px solid var(--line); }
+.prop-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+.prop-head .letter { font-size: 13px; color: var(--muted); margin: 0 0 6px; }
+.prop-head h2 { margin: 0; font-weight: 400; font-size: clamp(44px, 5vw, 72px); line-height: 1; }
+.a h2 { font-family: 'Bodoni Moda', serif; font-style: italic; }
+.b h2 { font-family: 'Libre Caslon Display', serif; }
+.c h2 { font-family: var(--sans); font-weight: 600; letter-spacing: -.04em; }
+.open { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; background: var(--ink); color: #fff; text-decoration: none; font-weight: 500; }
+.open:hover { background: #333; }
+
+.shots { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 20px; align-items: end; }
+.browser { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: #ddd; box-shadow: 0 30px 60px -40px rgba(0,0,0,.45); }
+.browser .bar { display: flex; gap: 6px; align-items: center; height: 30px; padding: 0 12px; background: #e8e6e1; border-bottom: 1px solid var(--line); }
+.browser .bar i { width: 10px; height: 10px; border-radius: 50%; background: #cfccc5; }
+.browser .bar span { margin-left: 10px; font-size: 12px; color: var(--muted); }
+.browser img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+.phone { border-radius: 28px; padding: 8px; background: #151514; box-shadow: 0 30px 60px -36px rgba(0,0,0,.55); }
+.phone img { border-radius: 21px; width: 100%; aspect-ratio: 390 / 844; object-fit: cover; object-position: top; }
+@media (max-width: 760px) { .shots { grid-template-columns: minmax(0, 1fr) 34%; gap: 12px; } .phone { border-radius: 18px; padding: 5px; } .phone img { border-radius: 14px; } }
+
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
+.facts h3 { margin: 0 0 8px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.facts p { margin: 0; color: var(--ink-2); font-size: 15px; }
+.sw { display: flex; gap: 6px; margin-bottom: 10px; }
+.sw i { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); }
+.facts ul { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 15px; }
+.facts li { margin: 3px 0; }
+@media (max-width: 960px) { .facts { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+@media (max-width: 520px) { .facts { grid-template-columns: minmax(0, 1fr); } }
+
+.common { border-top: 1px solid var(--line); padding: clamp(48px, 6vw, 80px) 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; }
+.common h2 { margin: 0 0 12px; font-weight: 500; font-size: clamp(30px, 3vw, 42px); letter-spacing: -.03em; line-height: 1.05; }
+.common ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.common li { padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--ink-2); }
+.common li b { color: var(--ink); font-weight: 600; }
+@media (max-width: 860px) { .common { grid-template-columns: minmax(0, 1fr); } }
+footer { border-top: 1px solid var(--line); padding: 28px 0 48px; font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Grosso Service · nuovo sito · novembre 2026 · a cura di Sharp Metrics</p>
+    <h1>Tre strade per il nuovo sito.</h1>
+    <div class="intro">
+      <p>Tre direzioni grafiche diverse per la stessa azienda e lo stesso obiettivo: far prenotare più clienti internazionali, con un'immagine all'altezza delle auto e del servizio. Ogni proposta è la home page completa, navigabile da computer e da telefono, con le animazioni previste. Scegliamo insieme la strada; poi la sviluppiamo nei dettagli.</p>
+      <div class="note"><b>Come leggere i mockup</b>
+        <ul>
+          <li><b>Immagini indicative</b>, create solo per dare l'atmosfera: nel sito vero useremo foto reali delle tue auto e dei luoghi.</li>
+          <li><b>Prezzi, tempi e testi di esempio</b>: li sostituiamo con il tuo listino e le tue parole.</li>
+          <li><b>Il nome «Grosso»</b> è scritto solo con i caratteri della proposta: è anche un primo spunto per il marchio.</li>
+          <li>Il modulo di prenotazione si può provare: scegli tratta e passeggeri e guarda i prezzi.</li>
+        </ul>
+      </div>
+    </div>
+    <nav class="jump" aria-label="Proposte"><a href="#a">A · Notturno</a><a href="#b">B · Riviera</a><a href="#c">C · Partenze</a><a href="#uguale">Cosa resta uguale</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="prop a" id="a" aria-labelledby="ha">
+    <div class="wrap">
+      <div class="prop-head"><div><p class="letter">Proposta A</p><h2 id="ha">Notturno</h2></div><a class="open" href="a-notturno.html">Apri la proposta →</a></div>
+      <div class="shots">
+        <a class="browser" href="a-notturno.html" aria-label="Apri la proposta A"><div class="bar"><i></i><i></i><i></i><span>grossoservice.com</span></div><img src="img/anteprime/a-notturno-desktop.webp" alt="Anteprima della proposta A su computer"></a>
+        <a class="phone" href="a-notturno.html" aria-label="Apri la proposta A sul telefono"><img src="img/anteprime/a-notturno-mobile.webp" alt="Anteprima della proposta A su telefono"></a>
+      </div>
+      <div class="facts">
+        <div><h3>L'idea</h3><p>L'arrivo come una scena di cinema: buio, silenzio, una luce calda che ti aspetta. Il lusso delle grandi case automobilistiche.</p></div>
+        <div><h3>Colori e caratteri</h3><div class="sw" aria-hidden="true"><i style="background:#0a0a0b"></i><i style="background:#18191c"></i><i style="background:#cbb68c"></i><i style="background:#ede8df"></i></div><p>Nero, grafite, champagne. Titoli Bodoni Moda, testo Manrope.</p></div>
+        <div><h3>Cosa si muove</h3><ul><li>Orologio di Milano in tempo reale (24/7)</li><li>La tratta Malpensa → Bellagio si disegna scorrendo</li><li>Fasci di luce lenti nella chiusura</li></ul></div>
+        <div><h3>Per chi funziona meglio</h3><p>Clienti che cercano esclusività: eventi, Classe S, arrivi serali, clientela del Golfo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prop b" id="b" aria-labelledby="hb">
+    <div class="wrap">
+      <div class="prop-head"><div><p class="letter">Proposta B</p><h2 id="hb">Riviera</h2></div><a class="open" href="b-riviera.html">Apri la proposta →</a></div>
+      <div class="shots">
+        <a class="browser" href="b-riviera.html" aria-label="Apri la proposta B"><div class="bar"><i></i><i></i><i></i><span>grossoservice.com</span></div><img src="img/anteprime/b-riviera-desktop.webp" alt="Anteprima della proposta B su computer" loading="lazy"></a>
+        <a class="phone" href="b-riviera.html" aria-label="Apri la proposta B sul telefono"><img src="img/anteprime/b-riviera-mobile.webp" alt="Anteprima della proposta B su telefono" loading="lazy"></a>
+      </div>
+      <div class="facts">
+        <div><h3>L'idea</h3><p>Un ospite, non un passeggero. L'eleganza calma dei grand hotel del lago, come una rivista di viaggio.</p></div>
+        <div><h3>Colori e caratteri</h3><div class="sw" aria-hidden="true"><i style="background:#f3eee4"></i><i style="background:#ddd3c1"></i><i style="background:#2d5651"></i><i style="background:#1c1b19"></i></div><p>Carta avorio, sabbia, verde lago. Titoli Libre Caslon, testo Hanken Grotesk.</p></div>
+        <div><h3>Cosa si muove</h3><ul><li>«La linea del lago»: fermate, tempi e prezzi come una vecchia mappa ferroviaria</li><li>Destinazioni a schede con foto</li><li>Nomi dei luoghi che scorrono lenti</li></ul></div>
+        <div><h3>Per chi funziona meglio</h3><p>Coppie, famiglie, matrimoni, ospiti delle ville del lago. La più vicina al turismo di lusso.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prop c" id="c" aria-labelledby="hc">
+    <div class="wrap">
+      <div class="prop-head"><div><p class="letter">Proposta C</p><h2 id="hc">Partenze</h2></div><a class="open" href="c-partenze.html">Apri la proposta →</a></div>
+      <div class="shots">
+        <a class="browser" href="c-partenze.html" aria-label="Apri la proposta C"><div class="bar"><i></i><i></i><i></i><span>grossoservice.com</span></div><img src="img/anteprime/c-partenze-desktop.webp" alt="Anteprima della proposta C su computer" loading="lazy"></a>
+        <a class="phone" href="c-partenze.html" aria-label="Apri la proposta C sul telefono"><img src="img/anteprime/c-partenze-mobile.webp" alt="Anteprima della proposta C su telefono" loading="lazy"></a>
+      </div>
+      <div class="facts">
+        <div><h3>L'idea</h3><p>Puntualità svizzera resa visibile: il sito come un tabellone delle partenze. Prezzo e durata subito, zero attese.</p></div>
+        <div><h3>Colori e caratteri</h3><div class="sw" aria-hidden="true"><i style="background:#0f1012"></i><i style="background:#f1f0ec"></i><i style="background:#f2a900"></i><i style="background:#6a6d72"></i></div><p>Grafite, carta chiara, ambra segnaletica. Geist e Geist Mono.</p></div>
+        <div><h3>Cosa si muove</h3><ul><li>Tabellone a palette che gira le lettere su tratte e prezzi</li><li>Stato del volo in diretta (esempio)</li><li>Flotta da scegliere per posti e valigie</li></ul></div>
+        <div><h3>Per chi funziona meglio</h3><p>Clienti business e chi arriva da un annuncio e vuole prenotare in fretta. La più orientata alla prenotazione.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="uguale" aria-labelledby="hu">
+    <div class="common">
+      <div><h2 id="hu">Cosa resta uguale, qualunque strada scegli</h2><p style="color:var(--ink-2);margin:0">Cambia l'aspetto, non il funzionamento. Queste cose ci sono in tutte e tre.</p></div>
+      <ul>
+        <li><b>Prezzo fisso subito</b>, per tratta e per auto, prima di prenotare.</li>
+        <li><b>Conferma di una persona</b> in pochi minuti: la carta viene addebitata solo dopo la conferma (anche Apple Pay e Google Pay), oppure si paga a bordo.</li>
+        <li><b>WhatsApp</b> sempre a portata di mano.</li>
+        <li><b>Licenza NCC e recensioni vere</b>, collegate a Google.</li>
+        <li><b>Più lingue</b>: inglese e italiano scritti da noi, le altre aggiunte con GTranslate.</li>
+        <li><b>Veloce sul telefono</b>: le animazioni sono leggere e si spengono per chi le disattiva.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Mockup indicativi preparati da Sharp Metrics per Grosso Service. Immagini generate con intelligenza artificiale solo come riferimento di atmosfera; prezzi, tempi e testi di esempio.</div></footer>
+</body>
+</html>
